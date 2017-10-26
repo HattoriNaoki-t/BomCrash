@@ -6,9 +6,17 @@ public class SetBom : MonoBehaviour {
 
 
     public GameObject Player;
+    public GameObject Player2;
 
 
     private bool FirstSetFlag;
+    private bool SecondSetFlag;
+
+
+
+    public bool bomflag;
+
+    //public GameObject bom;
 
     // Use this for initialization
     void Start () {
@@ -19,9 +27,17 @@ public class SetBom : MonoBehaviour {
 	void Update ()
     {
         FirstSetFlag = Player.GetComponent<CharMove>().GetFlag();
+        SecondSetFlag = Player2.GetComponent<CharMove2>().GetFlag();
+
+        //if(bomflag==false)
+        //{
+        //    Instantiate(bom,new Vector3(0,5,5),Quaternion.identity);
+        //    bomflag = true;
+        //}
+
 
         //Debug.Log(FirstSetFlag);
-        if (FirstSetFlag)
+        if (FirstSetFlag&&SecondSetFlag)
         {
             if (Input.GetKeyDown(KeyCode.DownArrow))
             {

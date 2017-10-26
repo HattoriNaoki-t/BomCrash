@@ -35,6 +35,7 @@ public class CharMove : MonoBehaviour {
         }
         if (Input.GetKeyDown(KeyCode.Space))
         {
+            transform.GetComponent<MeshRenderer>().material.color = new Color(transform.GetComponent<MeshRenderer>().material.color.r, transform.GetComponent<MeshRenderer>().material.color.g, transform.GetComponent<MeshRenderer>().material.color.b, 0.3f);
             SetFlag = true;
         }
     }
