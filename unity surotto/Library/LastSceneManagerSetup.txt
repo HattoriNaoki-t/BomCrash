@@ -1,0 +1,4 @@
+sceneSetups:
+- path: Assets/surotto.unity
+  isLoaded: 1
+  isActive: 1
