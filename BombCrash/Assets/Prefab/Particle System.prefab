@@ -9,18 +9,18 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1438693716393940}
+  m_RootGameObject: {fileID: 1736998711403922}
   m_IsPrefabParent: 1
---- !u!1 &1438693716393940
+--- !u!1 &1736998711403922
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 4986505096164464}
-  - component: {fileID: 198553685604225400}
-  - component: {fileID: 199724467968815710}
+  - component: {fileID: 4852789796181580}
+  - component: {fileID: 198736675182554890}
+  - component: {fileID: 199952121547920728}
   m_Layer: 0
   m_Name: Particle System
   m_TagString: Untagged
@@ -28,25 +28,25 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4986505096164464
+--- !u!4 &4852789796181580
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1438693716393940}
+  m_GameObject: {fileID: 1736998711403922}
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0.94430786, y: 0.99588645, z: 2}
+  m_LocalPosition: {x: 3.8809412, y: 0.6314848, z: -17.728216}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!198 &198553685604225400
+--- !u!198 &198736675182554890
 ParticleSystem:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1438693716393940}
+  m_GameObject: {fileID: 1736998711403922}
   serializedVersion: 5
   lengthInSec: 5
   simulationSpeed: 1
@@ -101,7 +101,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -1118360380
+  randomSeed: 1384129638
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -3358,13 +3358,13 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
---- !u!199 &199724467968815710
+--- !u!199 &199952121547920728
 ParticleSystemRenderer:
   serializedVersion: 4
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1438693716393940}
+  m_GameObject: {fileID: 1736998711403922}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
