@@ -53,7 +53,7 @@ public class ReelController : MonoBehaviour
         for (int i = 0; i < 12; i++)
         {
 
-            Vector3 pos = new Vector3(0.0f, -0.9f + (0.9f * i), 0.0f);
+            Vector3 pos = new Vector3(0.0f, -2.0f + (2.0f * i), 0.0f);
 
             int tmp = Random.Range(0, imgobj.Length);//絵柄をランダムで生成
 
@@ -132,7 +132,7 @@ public class ReelController : MonoBehaviour
         else
         {
 
-            if (pos.localPosition.y % 0.9f < -0.06f)
+            if (pos.localPosition.y % 2.0f < -0.06f)
             {   //絵柄をマスで固定するために回転スピードを弱める
 
                 flg = 0;
