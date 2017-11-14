@@ -5,32 +5,54 @@ using UnityEngine;
 public class CharMove : MonoBehaviour {
 
 
-    static bool SetFlag; 
-    
-	// Use this for initialization
-	void Start () {
+    static bool SetFlag;
+
+    private int x = 0;
+    private int y = 0;
+
+
+
+    // Use this for initialization
+    void Start () {
 		
 	}
 	
 	// Update is called once per frame
 	void Update () {
+
         if (SetFlag == false)
         {
-            if (Input.GetKeyDown(KeyCode.DownArrow))
+            if (y < 5)
             {
-                transform.Translate(new Vector3(0, 0, -1));
+                if (Input.GetKeyDown(KeyCode.DownArrow))
+                {
+                    transform.Translate(new Vector3(0, 0, -1));
+                    y++;
+                }
             }
-            if (Input.GetKeyDown(KeyCode.UpArrow))
+            if (y > 0)
             {
-                transform.Translate(new Vector3(0, 0, 1));
+                if (Input.GetKeyDown(KeyCode.UpArrow))
+                {
+                    transform.Translate(new Vector3(0, 0, 1));
+                    y--;
+                }
             }
-            if (Input.GetKeyDown(KeyCode.LeftArrow))
+            if (x > 0)
             {
-                transform.Translate(new Vector3(-1, 0, 0));
+                if (Input.GetKeyDown(KeyCode.LeftArrow))
+                {
+                    transform.Translate(new Vector3(-1, 0, 0));
+                    x--;
+                }
             }
-            if (Input.GetKeyDown(KeyCode.RightArrow))
+            if (x < 5)
             {
-                transform.Translate(new Vector3(1, 0, 0));
+                if (Input.GetKeyDown(KeyCode.RightArrow))
+                {
+                    transform.Translate(new Vector3(1, 0, 0));
+                    x++;
+                }
             }
         }
         if (Input.GetKeyDown(KeyCode.Space))
