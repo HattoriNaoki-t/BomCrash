@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: a9d7204f448c30b4baa0e15ae51aadee
+timeCreated: 1508807420
+licenseType: Pro
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - bakuhatu: {fileID: 8300000, guid: 848865df0939cf140b416bc08f29a864, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

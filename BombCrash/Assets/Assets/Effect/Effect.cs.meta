@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: d2088b0df1bc0524da0da3ab08680d66
+timeCreated: 1508464740
+licenseType: Pro
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - bakuhatu: {fileID: 8300000, guid: 848865df0939cf140b416bc08f29a864, type: 3}
+  - daibakuhatu: {fileID: 8300000, guid: dc06f2a1814e385448354d872733593c, type: 3}
+  - botton_oto: {fileID: 8300000, guid: d29534a6cd5954e48bced82dd64e0049, type: 3}
+  - rebar: {fileID: 8300000, guid: 39243ad416f1ed44e8da3df13cb44359, type: 3}
+  - bigbouns: {fileID: 8300000, guid: 8f6c9b85472777b4580839f2f7765eab, type: 3}
+  - regular: {fileID: 8300000, guid: 53b4a8c08deb8cf47b9b97f0ce31925e, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
