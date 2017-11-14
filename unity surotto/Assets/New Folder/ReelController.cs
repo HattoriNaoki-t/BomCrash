@@ -22,7 +22,7 @@ public class ReelController : MonoBehaviour
     int[] lines = new int[3];   //リール停止時に見えている絵柄のid(imgobjの番号)を格納
 
     int[] current = { -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1,- 1, -1, -1, -1, -1, -1, -1, -1 }; //配列に全体の絵柄idを格納
-
+    // -1, -1, -1, -1, -1, -1, -1, -1,
     GameObject[] tmp_obj = new GameObject[20];
 
     Transform[] img_pos = new Transform[20];
@@ -58,7 +58,7 @@ public class ReelController : MonoBehaviour
 
 
 
-            if (i != 0 && i < 9)
+            if (i != 0 && i < 16)
             {
 
                 while (current[i - 1] == tmp)
@@ -69,19 +69,19 @@ public class ReelController : MonoBehaviour
                 }
 
             }
-            else if (i == 9)
+            else if (i == 17)
             {
 
                 tmp = current[0];
 
             }
-            else if (i == 10)
+            else if (i == 18)
             {
 
                 tmp = current[1];
 
             }
-            else if (i == 11)
+            else if (i == 19)
             {
 
                 tmp = current[2];
