@@ -28,7 +28,7 @@ public class GameController : MonoBehaviour
 
     public Button playbt;
 
-
+    public KeyCode stop;
 
     public GameObject[] reels;
 
@@ -67,14 +67,37 @@ public class GameController : MonoBehaviour
     void Update()
     {
 
+
         if (stopline_len == 3 && state == State.Playing)
         {
+
 
             state = State.Stay;
 
             Chack();
 
             playbt.interactable = true;
+
+        }
+
+
+
+        if (Input.GetKeyDown(stop))
+        {
+            playbt.interactable = false;
+
+            stopline_len = 0;
+
+            state = State.Playing;
+
+            for (int i = 0; i < 3; i++)
+            {
+
+                rc[i].Reel_Move();
+
+                stopbt[i].interactable = true;
+
+            }
 
         }
 
@@ -100,9 +123,9 @@ public class GameController : MonoBehaviour
 
         }
 
-
-
     }
+
+
 
 
 

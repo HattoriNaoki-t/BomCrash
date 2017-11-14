@@ -12,7 +12,7 @@ public class ReelController : MonoBehaviour
     public GameController gc;
 
 
-
+    public KeyCode stopKey;
 
 
     public int line_ID = 0; //リールのid
@@ -21,18 +21,17 @@ public class ReelController : MonoBehaviour
 
     int[] lines = new int[3];   //リール停止時に見えている絵柄のid(imgobjの番号)を格納
 
-    int[] current = { -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1 }; //配列に全体の絵柄idを格納
+    int[] current = { -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1,- 1, -1, -1, -1, -1, -1, -1, -1 }; //配列に全体の絵柄idを格納
 
-    GameObject[] tmp_obj = new GameObject[12];
+    GameObject[] tmp_obj = new GameObject[20];
 
-    Transform[] img_pos = new Transform[12];
+    Transform[] img_pos = new Transform[20];
 
 
 
     Transform pos;  //リールのTransform
 
     Vector3 initpos; //リールの初期位置
-
 
 
     public int speed; //リールの回転速度
@@ -50,7 +49,7 @@ public class ReelController : MonoBehaviour
 
         initpos = pos.localPosition;
 
-        for (int i = 0; i < 12; i++)
+        for (int i = 0; i < 20; i++)
         {
 
             Vector3 pos = new Vector3(0.0f, -2.0f + (2.0f * i), 0.0f);
@@ -114,6 +113,18 @@ public class ReelController : MonoBehaviour
     void Update()
     {
 
+
+        if (Input.GetKeyDown(stopKey))
+        {
+            turn = false;
+
+            gc.Stopbt_f(line_ID);
+        }
+
+
+        ///////////////////////////////////////////////////////
+
+
         if (pos.localPosition.y < -8.1)
         {
 
@@ -121,6 +132,7 @@ public class ReelController : MonoBehaviour
 
         }
 
+       
 
 
         if (turn)
@@ -132,7 +144,7 @@ public class ReelController : MonoBehaviour
         else
         {
 
-            if (pos.localPosition.y % 2.0f < -0.06f)
+            if (pos.localPosition.y % 1.0f < -0.06f)
             {   //絵柄をマスで固定するために回転スピードを弱める
 
                 flg = 0;
@@ -193,18 +205,20 @@ public class ReelController : MonoBehaviour
     }
 
 
-
+    
 
 
     public void Reel_Stop()
     {
 
         turn = false;
+       
 
         gc.Stopbt_f(line_ID);
 
     }
 
+  
 
 
     public void Reel_Move()
