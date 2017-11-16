@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657868, g: 0.49641263, b: 0.57481706, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -422,7 +422,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 167260296}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 173, z: 0}
+  m_LocalPosition: {x: 0, y: 172.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1443249401}
@@ -1614,7 +1614,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1443249397}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 366.5, y: 206, z: 0}
+  m_LocalPosition: {x: 365, y: 205.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 634859980}
@@ -1901,6 +1901,12 @@ Prefab:
       propertyPath: Player2ItemView.Array.data[2]
       value: 
       objectReference: {fileID: 1669409638}
+    - target: {fileID: 114876564660411220, guid: ec2dbdbffae50c545ba309566e9ff4f2,
+        type: 2}
+      propertyPath: bom
+      value: 
+      objectReference: {fileID: 1325975686997544, guid: 1771703137d8b504bb51365e9a3c1d5d,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ec2dbdbffae50c545ba309566e9ff4f2, type: 2}
   m_IsPrefabParent: 0
