@@ -144,7 +144,7 @@ MonoBehaviour:
   - {fileID: 506186721}
   - {fileID: 1106032997}
   playbt: {fileID: 2087189760}
-  stop: 0
+  stop: 335
   reels:
   - {fileID: 1807438583}
   - {fileID: 540117072}
@@ -735,7 +735,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gc: {fileID: 84705651}
-  stopKey: 0
+  stopKey: 332
   line_ID: 1
   imgobj:
   - {fileID: 1357586988900854, guid: 56295b4b42bfa104da1f63e7ea29c051, type: 2}
@@ -1202,7 +1202,7 @@ MonoBehaviour:
   m_Script: {fileID: 1980459831, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
@@ -1239,8 +1239,8 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1196655164}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 952, y: 10, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 365, y: 205.5, z: 0}
+  m_LocalScale: {x: 0.9125, y: 0.9125, z: 0.9125}
   m_Children:
   - {fileID: 213450543}
   - {fileID: 506186720}
@@ -1295,7 +1295,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gc: {fileID: 84705651}
-  stopKey: 0
+  stopKey: 331
   line_ID: 2
   imgobj:
   - {fileID: 1357586988900854, guid: 56295b4b42bfa104da1f63e7ea29c051, type: 2}
@@ -1420,7 +1420,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gc: {fileID: 84705651}
-  stopKey: 0
+  stopKey: 333
   line_ID: 0
   imgobj:
   - {fileID: 1357586988900854, guid: 56295b4b42bfa104da1f63e7ea29c051, type: 2}
