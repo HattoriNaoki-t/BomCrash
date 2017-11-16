@@ -15,6 +15,8 @@ public class GameManager : MonoBehaviour {
 
     public static  int turn = 0;
 
+    public GameObject Warp;
+
     public GameObject[] Player1ItemView;
     public GameObject[] Player2ItemView;
 
@@ -171,5 +173,26 @@ public class GameManager : MonoBehaviour {
             insflag2 = true;
         }
     }
+    public void WarpButtonClick()
+    {
+        //爆弾ボタンクリックで生成
+        if (insflag2 == false)
+        {
+            //TurnChangeButton.SetActive(true);
 
+            if (turn == 1 && player1_Warp > 0)
+            {
+                Instantiate(Warp);
+                player1_Warp--;
+                Player1ItemView[1].GetComponentInChildren<Text>().text = "ワープ x " + player1_Warp.ToString();
+            }
+            if (turn == 2 && player2_Warp > 0)
+            {
+                Instantiate(Warp);
+                player2_Warp--;
+                Player2ItemView[1].GetComponentInChildren<Text>().text = "ワープ x " + player2_Warp.ToString();
+            }
+            insflag2 = true;
+        }
+    }
 }
