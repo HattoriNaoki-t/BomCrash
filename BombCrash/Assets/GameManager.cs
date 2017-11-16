@@ -37,6 +37,8 @@ public class GameManager : MonoBehaviour {
     public int player1_Warp = 1;
     public int player2_Warp = 1;
 
+    private GameObject MainCam;
+    private GameObject SubCam;
 
 
 
@@ -48,6 +50,11 @@ public class GameManager : MonoBehaviour {
             Player1ItemView[i].SetActive(false);
             Player2ItemView[i].SetActive(false);
         }
+
+        MainCam = GameObject.Find("Main Camera");
+        SubCam = GameObject.Find("SubCamera");
+
+        SubCam.SetActive(false);
     }
 
     // Update is called once per frame
@@ -115,10 +122,21 @@ public class GameManager : MonoBehaviour {
         if(turn == 1)
         {
             turn = 2;
+
         }
         else
         {
             turn = 1;
+        }
+        if (MainCam.activeSelf)
+        {
+            MainCam.SetActive(false);
+            SubCam.SetActive(true);
+        }
+        else
+        {
+            MainCam.SetActive(true);
+            SubCam.SetActive(false);
         }
         insflag2 = false;
         //TurnChangeButton.SetActive(false);
@@ -153,4 +171,5 @@ public class GameManager : MonoBehaviour {
             insflag2 = true;
         }
     }
+
 }
