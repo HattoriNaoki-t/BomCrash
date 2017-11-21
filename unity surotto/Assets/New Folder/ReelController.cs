@@ -54,39 +54,39 @@ public class ReelController : MonoBehaviour
 
             Vector3 pos = new Vector3(0.0f, -2.0f + (2.0f * i), 0.0f);
 
-            int tmp = Random.Range(0, imgobj.Length);//絵柄をランダムで生成
+           // int tmp = Random.Range(0, imgobj.Length);//絵柄をランダムで生成
 
+            int tmp = 3;
 
+            //if (i != 0 && i < 16)
+            //{
 
-            if (i != 0 && i < 16)
-            {
+            //    while (current[i - 1] == tmp)
+            //    { //前の絵柄と同じにならないように再抽選
 
-                while (current[i - 1] == tmp)
-                { //前の絵柄と同じにならないように再抽選
+            //        tmp = Random.Range(0, imgobj.Length);
 
-                    tmp = Random.Range(0, imgobj.Length);
+            //    }
 
-                }
+            //}
+            //else if (i == 17)
+            //{
 
-            }
-            else if (i == 17)
-            {
+            //    tmp = current[0];
 
-                tmp = current[0];
+            //}
+            //else if (i == 18)
+            //{
 
-            }
-            else if (i == 18)
-            {
+            //    tmp = current[1];
 
-                tmp = current[1];
+            //}
+            //else if (i == 19)
+            //{
 
-            }
-            else if (i == 19)
-            {
+            //    tmp = current[2];
 
-                tmp = current[2];
-
-            }
+            //}
 
 
 
@@ -125,7 +125,7 @@ public class ReelController : MonoBehaviour
         ///////////////////////////////////////////////////////
 
 
-        if (pos.localPosition.y < -8.1)
+        if (pos.localPosition.y< -8.1)
         {
 
             pos.localPosition = initpos;
@@ -149,7 +149,7 @@ public class ReelController : MonoBehaviour
 
                 flg = 0;
 
-                pos.localPosition = new Vector3(pos.localPosition.x, pos.localPosition.y - 0.03f, pos.localPosition.z);
+                pos.localPosition = new Vector3(pos.localPosition.x, pos.localPosition.y - 0.04f, pos.localPosition.z);
 
             }
             else
