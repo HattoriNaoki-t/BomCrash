@@ -11,9 +11,14 @@ public class CharMove2 : MonoBehaviour
 
     static bool SetFlag2;
 
+    public KeyCode stop;
+    public KeyCode[] arrow;
 
     private int x = 5;
     private int y = 5;
+
+
+
 
     // Use this for initialization
     void Start()
@@ -30,7 +35,7 @@ public class CharMove2 : MonoBehaviour
         {
             if (y < 5)
             {
-                if (Input.GetKeyDown(KeyCode.DownArrow))
+                if (Input.GetKeyDown(KeyCode.DownArrow)||Input.GetKeyDown(arrow[0]))
                 {
                     transform.Translate(new Vector3(0, 0, -1));
                     y++;
@@ -38,7 +43,7 @@ public class CharMove2 : MonoBehaviour
             }
             if (y > 0)
             {
-                if (Input.GetKeyDown(KeyCode.UpArrow))
+                if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(arrow[1]))
                 {
                     transform.Translate(new Vector3(0, 0, 1));
                     y--;
@@ -46,7 +51,7 @@ public class CharMove2 : MonoBehaviour
             }
             if (x > 0)
             {
-                if (Input.GetKeyDown(KeyCode.LeftArrow))
+                if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(arrow[2]))
                 {
                     transform.Translate(new Vector3(-1, 0, 0));
                     x--;
@@ -54,14 +59,14 @@ public class CharMove2 : MonoBehaviour
             }
             if (x < 5)
             {
-                if (Input.GetKeyDown(KeyCode.RightArrow))
+                if (Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(arrow[3]))
                 {
                     transform.Translate(new Vector3(1, 0, 0));
                     x++;
                 }
             }
         }
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space)||Input.GetKeyDown(stop))
         {
 
             transform.GetComponent<MeshRenderer>().material.color = new Color(transform.GetComponent<MeshRenderer>().material.color.r, transform.GetComponent<MeshRenderer>().material.color.g, transform.GetComponent<MeshRenderer>().material.color.b, 0.3f);
