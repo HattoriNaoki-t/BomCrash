@@ -112,7 +112,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stop: 355
-  arrow: 37000000670100000000000000000000
+  arrow: 37000000670100003a0000003b000000
 --- !u!136 &136467064245954468
 CapsuleCollider:
   m_ObjectHideFlags: 1

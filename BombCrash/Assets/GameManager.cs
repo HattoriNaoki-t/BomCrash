@@ -43,6 +43,10 @@ public class GameManager : MonoBehaviour {
     private GameObject SubCam;
 
 
+    public int selectNumber1;
+    public int selectNumber2;
+
+
 
     // Use this for initialization
     void Start () {
@@ -64,7 +68,28 @@ public class GameManager : MonoBehaviour {
         FirstSetFlag = Player.GetComponent<CharMove>().GetFlag();
         SecondSetFlag = Player2.GetComponent<CharMove2>().GetFlag();
 
-        if(FirstSetFlag == true && SecondSetFlag == true&&insflag3 ==false)
+        switch (selectNumber1)
+        {
+            case 0:Player1ItemView[0].GetComponent<Image>().color = new Color(1,1,0.7f);
+                break;
+            case 1: Player1ItemView[0].GetComponent<Image>().color = new Color(50, 0, 0, 255);
+                break;
+            case 2: Player1ItemView[0].GetComponent<Image>().color = new Color(255, 0, 0, 255);
+                break;
+            case 3: Player1ItemView[0].GetComponent<Image>().color = new Color(255, 0, 0, 255);
+                break;
+        }
+        switch (selectNumber2)
+        {
+            case 0: break;
+            case 1: break;
+            case 2: break;
+            case 3: break;
+        }
+
+
+
+        if (FirstSetFlag == true && SecondSetFlag == true&&insflag3 ==false)
         {
             turn = 1;
             insflag3 = true;
