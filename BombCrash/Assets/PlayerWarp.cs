@@ -21,15 +21,22 @@ public class PlayerWarp : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         turn = GameCom.GetComponent<GameManager>().getTurn();
+        Player1 = GameObject.Find("Player1(Clone)");
+        Player2 = GameObject.Find("Player2(Clone)");
 
 
-        if(turn == 1)
+        if (turn == 1)
         {
+            if (Input.GetKeyDown(KeyCode.W))
+            {
+                Player1.transform.position = transform.position;
+                Destroy(gameObject);
+            }
             if (y < 5)
             {
                 if (Input.GetKeyDown(KeyCode.DownArrow))
                 {
-                    transform.Translate(new Vector3(0, 0, -1));
+                    transform.Translate(new Vector3(0, 1, 0));
                     y++;
                 }
             }
@@ -37,7 +44,7 @@ public class PlayerWarp : MonoBehaviour {
             {
                 if (Input.GetKeyDown(KeyCode.UpArrow))
                 {
-                    transform.Translate(new Vector3(0, 0, 1));
+                    transform.Translate(new Vector3(0, -1, 0));
                     y--;
                 }
             }
@@ -65,7 +72,7 @@ public class PlayerWarp : MonoBehaviour {
             {
                 if (Input.GetKeyDown(KeyCode.DownArrow))
                 {
-                    transform.Translate(new Vector3(0, 0, -1));
+                    transform.Translate(new Vector3(0, 1, 0));
                     y++;
                 }
             }
@@ -73,7 +80,7 @@ public class PlayerWarp : MonoBehaviour {
             {
                 if (Input.GetKeyDown(KeyCode.UpArrow))
                 {
-                    transform.Translate(new Vector3(0, 0, 1));
+                    transform.Translate(new Vector3(0, -1, 0));
                     y--;
                 }
             }

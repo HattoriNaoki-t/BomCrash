@@ -8,7 +8,6 @@ using UnityEngine.UI;
 
 
 
-
 enum State
 {
 
@@ -35,6 +34,8 @@ public class GameController : MonoBehaviour
 
     ReelController[] rc = new ReelController[3];
 
+    public GameObject gamemanager;
+
     private GameObject MainCam;
     private GameObject SubCam;
 
@@ -50,10 +51,10 @@ public class GameController : MonoBehaviour
 
     void Start()
     {
+
         MainCam = GameObject.Find("Main Camera");
         SubCam = GameObject.Find("SubCamera");
 
-        //SubCam.SetActive(false);
 
         for (int i = 0; i < 3; i++)
         {
@@ -88,6 +89,14 @@ public class GameController : MonoBehaviour
 
 
 
+
+    }
+
+
+
+    public void Play()
+    {
+        //Playボタンを押した時の動作
         if (Input.GetKeyDown(stop))
         {
             playbt.interactable = false;
@@ -106,13 +115,6 @@ public class GameController : MonoBehaviour
             }
 
         }
-
-    }
-
-
-
-    public void Play()
-    {   //Playボタンを押した時の動作
 
         playbt.interactable = false;
 
@@ -180,8 +182,62 @@ public class GameController : MonoBehaviour
     }
 
 
+    ///////図柄ぞろい
+    void ATR(int G)
+    {
+        ///////図柄ぞろい
+        switch (G)
+        {
 
+            case 0:
 
+                Debug.Log("7揃ったぞ");
+
+                gamemanager.GetComponent<GameManager>().Seven();
+                break;
+
+            case 1:
+
+                Debug.Log("BARが揃った");
+                gamemanager.GetComponent<GameManager>().Bar();
+
+                break;
+
+            case 2:
+
+                Debug.Log("爆弾が揃った");
+                gamemanager.GetComponent<GameManager>().AddBom();
+                break;
+
+            case 3:
+
+                Debug.Log("チェリーが揃った");
+                //何もなし
+                break;
+
+            case 4:
+
+                Debug.Log("ハートが揃った");
+
+                gamemanager.GetComponent<GameManager>().AddHp();
+                break;
+
+            case 5:
+
+                Debug.Log("ゾウさんが揃った");
+
+                gamemanager.GetComponent<GameManager>().AddWarp();
+                break;
+
+            default:
+
+                Debug.Log("???????");
+                break;
+
+        }
+
+        
+    }
 
 
 
@@ -193,36 +249,7 @@ public class GameController : MonoBehaviour
 
             if (lineL[i] == lineC[i] && lineC[i] == lineR[i])
             {
-
-                switch (i)
-                {
-
-                    case 0:
-
-                        Debug.Log("一番下のラインが揃ったよ。");
-
-                        break;
-
-                    case 1:
-
-                        Debug.Log("真ん中のラインが揃ったよ。");
-
-                        break;
-
-                    case 2:
-
-                        Debug.Log("一番上のラインが揃ったよ。");
-                        
-                        break;
-
-                    default:
-
-                        Debug.Log("設定ミスでは???");
-
-                        break;
-
-                }
-
+                ATR(lineL[i]);
             }
 
         }
@@ -231,16 +258,13 @@ public class GameController : MonoBehaviour
 
         if (lineL[0] == lineC[1] && lineC[1] == lineR[2])
         {
-
-            Debug.Log("ラインの左下がりが揃ったよ。");
-
+            ATR(lineL[0]);
         }
 
         if (lineL[2] == lineC[1] && lineC[1] == lineR[0])
         {
 
-            Debug.Log("ラインの右上がりが揃ったよ。");
-
+            ATR(lineL[2]);
         }
         if (MainCam.activeSelf)
         {
@@ -253,6 +277,5 @@ public class GameController : MonoBehaviour
             SubCam.SetActive(false);
         }
     }
-
 
 }

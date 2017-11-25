@@ -39,6 +39,14 @@ public class GameManager : MonoBehaviour {
     public int player1_Warp = 1;
     public int player2_Warp = 1;
 
+    public int player1_Hp = 2;
+    public int player2_Hp = 2;
+
+    public GameObject seven;
+    public GameObject bar;
+
+
+
     private GameObject MainCam;
     private GameObject SubCam;
 
@@ -46,11 +54,16 @@ public class GameManager : MonoBehaviour {
     public int selectNumber1;
     public int selectNumber2;
 
+    public GameObject[] playerhpSprite;
 
 
     // Use this for initialization
     void Start () {
         Instantiate(Player);
+        for(int i = 0; i < 4; i++)
+        {
+            Instantiate(playerhpSprite[i]);
+        }
         TurnChangeButton.SetActive(false);
         for(int i = 0; i < Player1ItemView.Length; i++) {
             Player1ItemView[i].SetActive(false);
@@ -68,26 +81,28 @@ public class GameManager : MonoBehaviour {
         FirstSetFlag = Player.GetComponent<CharMove>().GetFlag();
         SecondSetFlag = Player2.GetComponent<CharMove2>().GetFlag();
 
-        switch (selectNumber1)
-        {
-            case 0:Player1ItemView[0].GetComponent<Image>().color = new Color(1,1,0.7f);
-                break;
-            case 1: Player1ItemView[0].GetComponent<Image>().color = new Color(50, 0, 0, 255);
-                break;
-            case 2: Player1ItemView[0].GetComponent<Image>().color = new Color(255, 0, 0, 255);
-                break;
-            case 3: Player1ItemView[0].GetComponent<Image>().color = new Color(255, 0, 0, 255);
-                break;
-        }
-        switch (selectNumber2)
-        {
-            case 0: break;
-            case 1: break;
-            case 2: break;
-            case 3: break;
-        }
+        //switch (selectNumber1)
+        //{
+        //    case 0:Player1ItemView[0].GetComponent<Image>().color = new Color(1,1,0.7f);
+        //        break;
+        //    case 1: Player1ItemView[0].GetComponent<Image>().color = new Color(50, 0, 0, 255);
+        //        break;
+        //    case 2: Player1ItemView[0].GetComponent<Image>().color = new Color(255, 0, 0, 255);
+        //        break;
+        //    case 3: Player1ItemView[0].GetComponent<Image>().color = new Color(255, 0, 0, 255);
+        //        break;
+        //}
+        //switch (selectNumber2)
+        //{
+        //    case 0: break;
+        //    case 1: break;
+        //    case 2: break;
+        //    case 3: break;
+        //}
 
+        Player1ItemView[0].GetComponentInChildren<Text>().text = "爆弾 x " + player1_Bom.ToString();
 
+        Player2ItemView[0].GetComponentInChildren<Text>().text = "爆弾 x " + player2_Bom.ToString();
 
         if (FirstSetFlag == true && SecondSetFlag == true&&insflag3 ==false)
         {
@@ -109,7 +124,7 @@ public class GameManager : MonoBehaviour {
 
         if (turn == 1)
         {
-
+            
             for (int i = 0; i < Player1ItemView.Length; i++)
             {
                 Player1ItemView[i].SetActive(true);
@@ -187,13 +202,11 @@ public class GameManager : MonoBehaviour {
             {
                 Instantiate(bom);
                 player1_Bom--;
-                Player1ItemView[0].GetComponentInChildren<Text>().text = "爆弾 x " + player1_Bom.ToString();
             }
             if(turn == 2 && player2_Bom > 0)
             {
                 Instantiate(bom2);
                 player2_Bom--;
-                Player2ItemView[0].GetComponentInChildren<Text>().text = "爆弾 x " + player2_Bom.ToString();
             }
             insflag2 = true;
         }
@@ -220,4 +233,67 @@ public class GameManager : MonoBehaviour {
             insflag2 = true;
         }
     }
+    public void AddBom()
+    {
+        if (turn==1)
+        {
+            player1_Bom++;
+        }
+        if (turn == 2)
+        {
+            player2_Bom++;
+        }
+    }
+    public void AddWarp()
+    {
+        if (turn == 1)
+        {
+            player1_Warp = 1;
+        }
+        if (turn == 2)
+        {
+            player2_Warp = 1;
+        }
+    }
+    public void AddHp()
+    {
+        if (turn == 1)
+        {
+            if (player1_Hp == 1)
+                player1_Hp++;
+        }
+        if (turn == 2)
+        {
+            if (player2_Hp == 1)
+                player2_Hp++;
+        }
+    }
+    public void MinusHp()
+    {
+        if (turn == 1)
+        {
+                player1_Hp--;
+        }
+        if (turn == 2)
+        {
+                player2_Hp--;
+        }
+    }
+    public int getplayer1HP()
+    {
+        return player1_Hp;
+    }
+    public int getplayer2HP()
+    {
+        return player2_Hp;
+    }
+    public void Seven()
+    {
+        Instantiate(seven);
+    }
+    public void Bar()
+    {
+        Instantiate(bar);
+    }
+
 }

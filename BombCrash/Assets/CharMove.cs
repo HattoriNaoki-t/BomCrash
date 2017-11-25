@@ -60,7 +60,7 @@ public class CharMove : MonoBehaviour {
         }
         if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(stop))
         {
-            transform.GetComponent<MeshRenderer>().material.color = new Color(transform.GetComponent<MeshRenderer>().material.color.r, transform.GetComponent<MeshRenderer>().material.color.g, transform.GetComponent<MeshRenderer>().material.color.b, 0.3f);
+            transform.GetComponent<MeshRenderer>().material.color = new Color(transform.GetComponent<MeshRenderer>().material.color.r, transform.GetComponent<MeshRenderer>().material.color.g, transform.GetComponent<MeshRenderer>().material.color.b, 0.0f);
             SetFlag = true;
         }
     }

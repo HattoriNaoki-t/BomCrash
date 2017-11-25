@@ -25,6 +25,9 @@ public class DamegeEffect : MonoBehaviour
     {
         Debug.Log(player1_hp);
         Debug.Log(player2_hp);
+        player1_hp = gamemanager.GetComponent<GameManager>().getplayer1HP();
+        player1_hp = gamemanager.GetComponent<GameManager>().getplayer2HP();
+
 
     }
     private void OnCollisionEnter(Collision collision)
@@ -53,12 +56,12 @@ public class DamegeEffect : MonoBehaviour
         {
             if (player1_hp == 2)
             {
-                Destroy(GameObject.Find("life1-1"));
-                player1_hp = 1;
+                Destroy(GameObject.Find("life1-1(Clone)"));
+                gamemanager.GetComponent<GameManager>().MinusHp();
             }
             else
             {
-                Destroy(GameObject.Find("life1"));
+                Destroy(GameObject.Find("life1(Clone)"));
                 SceneManager.LoadScene("Title");
             }
         }
@@ -66,12 +69,13 @@ public class DamegeEffect : MonoBehaviour
         {
             if (player2_hp == 2)
             {
-                Destroy(GameObject.Find("life2-1"));
-                player2_hp = 1;
+                Destroy(GameObject.Find("life2-1(Clone)"));
+
+                gamemanager.GetComponent<GameManager>().MinusHp();
             }
             else
             {
-                Destroy(GameObject.Find("life2"));
+                Destroy(GameObject.Find("life2(Clone)"));
                 SceneManager.LoadScene("Title");
             }
         }

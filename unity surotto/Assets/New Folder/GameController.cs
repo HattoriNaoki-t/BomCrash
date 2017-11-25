@@ -35,6 +35,8 @@ public class GameController : MonoBehaviour
     ReelController[] rc = new ReelController[3];
 
 
+    private GameObject MainCam;
+    private GameObject SubCam;
 
     int[] lineL, lineC, lineR;
 
@@ -48,6 +50,10 @@ public class GameController : MonoBehaviour
 
     void Start()
     {
+
+        MainCam = GameObject.Find("Main Camera");
+        SubCam = GameObject.Find("SubCamera");
+
 
         for (int i = 0; i < 3; i++)
         {
@@ -220,6 +226,17 @@ public class GameController : MonoBehaviour
                 Debug.Log("???????");
                 break;
 
+        }
+
+        if (MainCam.activeSelf)
+        {
+            MainCam.SetActive(false);
+            SubCam.SetActive(true);
+        }
+        else
+        {
+            MainCam.SetActive(true);
+            SubCam.SetActive(false);
         }
     }
 
