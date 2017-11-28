@@ -68,6 +68,11 @@ public class PlayerWarp : MonoBehaviour {
         }
         if(turn == 2)
         {
+            if (Input.GetKeyDown(KeyCode.W))
+            {
+                Player2.transform.position = transform.position;
+                Destroy(gameObject);
+            }
             if (y < 5)
             {
                 if (Input.GetKeyDown(KeyCode.DownArrow))

@@ -81,6 +81,9 @@ public class GameManager : MonoBehaviour {
         FirstSetFlag = Player.GetComponent<CharMove>().GetFlag();
         SecondSetFlag = Player2.GetComponent<CharMove2>().GetFlag();
 
+        Debug.Log(player1_Warp);
+        Debug.Log(player2_Warp);
+
         //switch (selectNumber1)
         //{
         //    case 0:Player1ItemView[0].GetComponent<Image>().color = new Color(1,1,0.7f);
@@ -108,6 +111,16 @@ public class GameManager : MonoBehaviour {
         {
             turn = 1;
             insflag3 = true;
+            if (MainCam.activeSelf)
+            {
+                MainCam.SetActive(false);
+                SubCam.SetActive(true);
+            }
+            else
+            {
+                MainCam.SetActive(true);
+                SubCam.SetActive(false);
+            }
         }
 
 
@@ -170,6 +183,7 @@ public class GameManager : MonoBehaviour {
         {
             turn = 1;
         }
+
         if (MainCam.activeSelf)
         {
             MainCam.SetActive(false);

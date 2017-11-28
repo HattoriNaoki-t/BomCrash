@@ -26,7 +26,7 @@ public class DamegeEffect : MonoBehaviour
         Debug.Log(player1_hp);
         Debug.Log(player2_hp);
         player1_hp = gamemanager.GetComponent<GameManager>().getplayer1HP();
-        player1_hp = gamemanager.GetComponent<GameManager>().getplayer2HP();
+        player2_hp = gamemanager.GetComponent<GameManager>().getplayer2HP();
 
 
     }
