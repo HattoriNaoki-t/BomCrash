@@ -27,7 +27,7 @@ public class CharMove : MonoBehaviour {
         {
             if (y < 5)
             {
-                if (Input.GetKeyDown(KeyCode.DownArrow)||Input.GetKeyDown(arrow[0]))
+                if (Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(arrow[0]) || Input.GetAxis("Horizontal") == 1)
                 {
                     transform.Translate(new Vector3(0, 0, -1));
                     y++;
@@ -35,7 +35,7 @@ public class CharMove : MonoBehaviour {
             }
             if (y > 0)
             {
-                if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(arrow[1]))
+                if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(arrow[1]) || Input.GetAxis("Vertical") == 1)
                 {
                     transform.Translate(new Vector3(0, 0, 1));
                     y--;
@@ -43,7 +43,7 @@ public class CharMove : MonoBehaviour {
             }
             if (x > 0)
             {
-                if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(arrow[2]))
+                if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(arrow[2]) || Input.GetAxis("Horizontal") == -1)
                 {
                     transform.Translate(new Vector3(-1, 0, 0));
                     x--;
@@ -51,7 +51,7 @@ public class CharMove : MonoBehaviour {
             }
             if (x < 5)
             {
-                if (Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(arrow[3]))
+                if (Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(arrow[3]) || Input.GetAxis("Vertical") == -1)
                 {
                     transform.Translate(new Vector3(1, 0, 0));
                     x++;
