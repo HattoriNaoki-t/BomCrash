@@ -55,6 +55,7 @@ public class GameManager : MonoBehaviour {
     public GameObject seven;
     public GameObject bar;
 
+    private bool CursorFlag;
 
 
     private GameObject MainCam;
@@ -107,8 +108,7 @@ public class GameManager : MonoBehaviour {
 
         Debug.Log(Input.GetAxis("Horizontal"));
         Debug.Log(Input.GetAxis("Vertical"));
-
-
+        
         //Debug.Log(selectNumber1);
         //Debug.Log(selectNumber2);
 
@@ -120,9 +120,10 @@ public class GameManager : MonoBehaviour {
                     Player1ItemView[0].GetComponent<Image>().color = new Color(1, 1, 0.7f);
                     Player1ItemView[1].GetComponent<Image>().color = new Color(1, 1, 1.0f);
                     Player1ItemView[2].GetComponent<Image>().color = new Color(1, 1, 1.0f);
-                    if (Input.GetKeyDown(KeyCode.DownArrow)|| Input.GetAxis("Vertical")==-1)
+                    if (Input.GetKeyDown(KeyCode.DownArrow)|| Input.GetAxis("Vertical")==-1&&CursorFlag ==false)
                     {
                         selectNumber1++;
+                        CursorFlag = true;
                     }
                     if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(DecideButton))
                     {
@@ -134,11 +135,11 @@ public class GameManager : MonoBehaviour {
                     Player1ItemView[0].GetComponent<Image>().color = new Color(1, 1, 1.0f);
                     Player1ItemView[1].GetComponent<Image>().color = new Color(1, 1, 0.7f);
                     Player1ItemView[2].GetComponent<Image>().color = new Color(1, 1, 1.0f);
-                    if (Input.GetKeyDown(KeyCode.DownArrow) && FirstSetFlag || Input.GetAxis("Vertical") == -1)
+                    if (Input.GetKeyDown(KeyCode.DownArrow) && FirstSetFlag || Input.GetAxis("Vertical") == -1 && CursorFlag == false)
                     {
                         selectNumber1++;
                     }
-                    if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetAxis("Vertical") == 1)
+                    if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetAxis("Vertical") == 1 && CursorFlag == false)
                     {
                         selectNumber1--;
                     }
@@ -151,11 +152,12 @@ public class GameManager : MonoBehaviour {
                     Player1ItemView[0].GetComponent<Image>().color = new Color(1, 1, 1.0f);
                     Player1ItemView[1].GetComponent<Image>().color = new Color(1, 1, 1.0f);
                     Player1ItemView[2].GetComponent<Image>().color = new Color(1, 1, 0.7f);
-                    if (Input.GetKeyDown(KeyCode.UpArrow) && FirstSetFlag || Input.GetAxis("Vertical") == 1)
+                    if (Input.GetKeyDown(KeyCode.UpArrow) && FirstSetFlag || Input.GetAxis("Vertical") == 1 && CursorFlag == false)
                     {
                         selectNumber1--;
+                        CursorFlag = true;
                     }
-                    if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(DecideButton))
+                    if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(DecideButton) && CursorFlag == false)
                     {
                         changeTurn();
                     }
@@ -167,9 +169,10 @@ public class GameManager : MonoBehaviour {
                     Player2ItemView[0].GetComponent<Image>().color = new Color(1, 1, 0.7f);
                     Player2ItemView[1].GetComponent<Image>().color = new Color(1, 1, 1.0f);
                     Player2ItemView[2].GetComponent<Image>().color = new Color(1, 1, 1.0f);
-                    if (Input.GetKeyDown(KeyCode.DownArrow) || Input.GetAxis("Vertical") == -1)
+                    if (Input.GetKeyDown(KeyCode.DownArrow) || Input.GetAxis("Vertical") == -1 && CursorFlag == false)
                     {
                         selectNumber2++;
+                        CursorFlag = true;
                     }
                     if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(DecideButton2))
                     {
@@ -180,13 +183,15 @@ public class GameManager : MonoBehaviour {
                     Player2ItemView[0].GetComponent<Image>().color = new Color(1, 1, 1.0f);
                     Player2ItemView[1].GetComponent<Image>().color = new Color(1, 1, 0.7f);
                     Player2ItemView[2].GetComponent<Image>().color = new Color(1, 1, 1.0f);
-                    if (Input.GetKeyDown(KeyCode.DownArrow) || Input.GetAxis("Vertical") == -1)
+                    if (Input.GetKeyDown(KeyCode.DownArrow) || Input.GetAxis("Vertical") == -1 && CursorFlag == false)
                     {
                         selectNumber2++;
+                        CursorFlag = true;
                     }
-                    if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetAxis("Vertical") == 1)
+                    if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetAxis("Vertical") == 1 && CursorFlag == false)
                     {
                         selectNumber2--;
+                        CursorFlag = true;
                     }
                     if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(DecideButton2))
                     {
@@ -197,9 +202,10 @@ public class GameManager : MonoBehaviour {
                     Player2ItemView[0].GetComponent<Image>().color = new Color(1, 1, 1.0f);
                     Player2ItemView[1].GetComponent<Image>().color = new Color(1, 1, 1.0f);
                     Player2ItemView[2].GetComponent<Image>().color = new Color(1, 1, 0.7f);
-                    if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetAxis("Vertical") == 1)
+                    if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetAxis("Vertical") == 1 && CursorFlag == false)
                     {
                         selectNumber2--;
+                        CursorFlag = true;
                     }
                     if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(DecideButton2))
                     {
@@ -208,8 +214,11 @@ public class GameManager : MonoBehaviour {
                     break;
             }
         }
+        if (Input.GetAxis("Vertical") == 0)
+        {
+            CursorFlag = false;
+        }
 
-       
 
 
 

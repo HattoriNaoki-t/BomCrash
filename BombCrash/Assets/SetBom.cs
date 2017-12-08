@@ -14,10 +14,12 @@ public class SetBom : MonoBehaviour {
     private int x = 0;
     private int y = 0;
 
+    public KeyCode DecideButton;
 
 
     public bool bomflag;
 
+    private bool CursorFlag;
     //public GameObject bom;
 
     // Use this for initialization
@@ -43,39 +45,48 @@ public class SetBom : MonoBehaviour {
         {
             if (y < 5)
             {
-                if (Input.GetKeyDown(KeyCode.DownArrow))
+                if (Input.GetKeyDown(KeyCode.DownArrow) || Input.GetAxis("Vertical") == -1 && CursorFlag == false)
                 {
                     transform.Translate(new Vector3(0, 0, -1));
                     y++;
+                    CursorFlag = true;
                 }
             }
             if (y > 0)
             {
-                if (Input.GetKeyDown(KeyCode.UpArrow))
+                if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetAxis("Vertical") == 1 && CursorFlag == false)
                 {
                     transform.Translate(new Vector3(0, 0, 1));
                     y--;
+                    CursorFlag = true;
                 }
             }
             if (x > 0)
             {
-                if (Input.GetKeyDown(KeyCode.LeftArrow))
+                if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetAxis("Horizontal") == -1 && CursorFlag == false)
                 {
                     transform.Translate(new Vector3(-1, 0, 0));
                     x--;
+                    CursorFlag = true;
                 }
             }
             if (x < 5)
             {
-                if (Input.GetKeyDown(KeyCode.RightArrow))
+                if (Input.GetKeyDown(KeyCode.RightArrow) || Input.GetAxis("Horizontal") == 1 && CursorFlag == false)
                 {
                     transform.Translate(new Vector3(1, 0, 0));
                     x++;
+                    CursorFlag = true;
                 }
             }
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (Input.GetKeyDown(KeyCode.Space)||Input.GetKeyDown(DecideButton))
             {
                 transform.GetComponent<Rigidbody>().useGravity = true;
+            }
+
+            if (Input.GetAxis("Vertical") == 0 && Input.GetAxis("Horizontal") == 0)
+            {
+                CursorFlag = false;
             }
         }
         

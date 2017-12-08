@@ -777,6 +777,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Player: {fileID: 1960116515939998, guid: bf702ca1ffd30de40b9abbb5b9d7761f, type: 2}
   Player2: {fileID: 1227733560372420, guid: 392417dd2494b404ba9a0431ea2a89fe, type: 2}
+  DecideButton: 355
   bomflag: 0
 --- !u!135 &135079381514952102
 SphereCollider:

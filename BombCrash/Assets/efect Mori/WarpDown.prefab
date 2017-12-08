@@ -148,6 +148,8 @@ MonoBehaviour:
   GameCom: {fileID: 1504863035831614, guid: ec2dbdbffae50c545ba309566e9ff4f2, type: 2}
   Player1: {fileID: 1960116515939998, guid: bf702ca1ffd30de40b9abbb5b9d7761f, type: 2}
   Player2: {fileID: 1227733560372420, guid: 392417dd2494b404ba9a0431ea2a89fe, type: 2}
+  DecideButton: 355
+  DecideButton2: 375
 --- !u!114 &114672572630354228
 MonoBehaviour:
   m_ObjectHideFlags: 1
