@@ -26,6 +26,9 @@ public class PlayerWarp : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        Debug.Log(x);
+        Debug.Log(y);
+
         turn = GameCom.GetComponent<GameManager>().getTurn();
         Player1 = GameObject.Find("Player1(Clone)");
         Player2 = GameObject.Find("Player2(Clone)");
@@ -37,6 +40,7 @@ public class PlayerWarp : MonoBehaviour {
             {
                 Player1.transform.position = transform.position;
                 Destroy(gameObject);
+                Destroy(GameObject.Find("not1(Clone)"));
             }
             if (y < 5)
             {
@@ -122,6 +126,10 @@ public class PlayerWarp : MonoBehaviour {
                     x++;
                     CursorFlag = true;
                 }
+            }
+            if (Input.GetAxis("Vertical") == 0 && Input.GetAxis("Horizontal") == 0)
+            {
+                CursorFlag = false;
             }
         }
 	}

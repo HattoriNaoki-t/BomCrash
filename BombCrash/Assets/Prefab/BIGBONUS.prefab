@@ -6733,6 +6733,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Player: {fileID: 1960116515939998, guid: bf702ca1ffd30de40b9abbb5b9d7761f, type: 2}
   Player2: {fileID: 1227733560372420, guid: 392417dd2494b404ba9a0431ea2a89fe, type: 2}
+  DecideButton: 335
   bomflag: 0
 --- !u!114 &114305933696821036
 MonoBehaviour:
@@ -6762,6 +6763,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Player: {fileID: 1960116515939998, guid: bf702ca1ffd30de40b9abbb5b9d7761f, type: 2}
   Player2: {fileID: 1227733560372420, guid: 392417dd2494b404ba9a0431ea2a89fe, type: 2}
+  DecideButton: 335
   bomflag: 0
 --- !u!114 &114343759738332632
 MonoBehaviour:
@@ -6776,6 +6778,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Player: {fileID: 1960116515939998, guid: bf702ca1ffd30de40b9abbb5b9d7761f, type: 2}
   Player2: {fileID: 1227733560372420, guid: 392417dd2494b404ba9a0431ea2a89fe, type: 2}
+  DecideButton: 335
   bomflag: 0
 --- !u!114 &114358705311778586
 MonoBehaviour:
@@ -6805,6 +6808,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Player: {fileID: 1960116515939998, guid: bf702ca1ffd30de40b9abbb5b9d7761f, type: 2}
   Player2: {fileID: 1227733560372420, guid: 392417dd2494b404ba9a0431ea2a89fe, type: 2}
+  DecideButton: 335
   bomflag: 0
 --- !u!114 &114447864814737804
 MonoBehaviour:
@@ -6849,6 +6853,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Player: {fileID: 1960116515939998, guid: bf702ca1ffd30de40b9abbb5b9d7761f, type: 2}
   Player2: {fileID: 1227733560372420, guid: 392417dd2494b404ba9a0431ea2a89fe, type: 2}
+  DecideButton: 335
   bomflag: 0
 --- !u!114 &114494930893879080
 MonoBehaviour:
@@ -6878,6 +6883,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Player: {fileID: 1960116515939998, guid: bf702ca1ffd30de40b9abbb5b9d7761f, type: 2}
   Player2: {fileID: 1227733560372420, guid: 392417dd2494b404ba9a0431ea2a89fe, type: 2}
+  DecideButton: 335
   bomflag: 0
 --- !u!114 &114586807291756368
 MonoBehaviour:
@@ -6892,6 +6898,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Player: {fileID: 1960116515939998, guid: bf702ca1ffd30de40b9abbb5b9d7761f, type: 2}
   Player2: {fileID: 1227733560372420, guid: 392417dd2494b404ba9a0431ea2a89fe, type: 2}
+  DecideButton: 335
   bomflag: 0
 --- !u!114 &114642372871082406
 MonoBehaviour:
@@ -6906,6 +6913,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Player: {fileID: 1960116515939998, guid: bf702ca1ffd30de40b9abbb5b9d7761f, type: 2}
   Player2: {fileID: 1227733560372420, guid: 392417dd2494b404ba9a0431ea2a89fe, type: 2}
+  DecideButton: 335
   bomflag: 0
 --- !u!114 &114691718060818816
 MonoBehaviour:
@@ -6935,6 +6943,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Player: {fileID: 1960116515939998, guid: bf702ca1ffd30de40b9abbb5b9d7761f, type: 2}
   Player2: {fileID: 1227733560372420, guid: 392417dd2494b404ba9a0431ea2a89fe, type: 2}
+  DecideButton: 335
   bomflag: 0
 --- !u!114 &114909200147004756
 MonoBehaviour:
