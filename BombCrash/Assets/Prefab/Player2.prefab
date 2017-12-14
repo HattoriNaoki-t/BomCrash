@@ -111,7 +111,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1150162452fd3f247bc61ab94ffbf05a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stop: 375
+  stop: 58
   arrow: 3c0000003d0000003e0000003e000000
 --- !u!136 &136861108548696792
 CapsuleCollider:

@@ -2,16 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using System;
 
 public class GameManager : MonoBehaviour {
 
     public GameObject bom;
     public GameObject bom2;
 
-    public KeyCode DecideButton;
-
-    public KeyCode DecideButton2;
 
     public GameObject Player;
 
@@ -33,16 +29,10 @@ public class GameManager : MonoBehaviour {
     private bool SecondSetFlag;
 
     private bool insflag;
-    private bool useItemFlag;
-    private bool useItemFlag2;
-
+    private bool insflag2;
     private bool insflag3;
-    private bool insflag4;
-    private bool insflag5;
 
-
-    private bool UseBom;
-    private bool UseWarp;
+    private bool UseItemflag;
 
     public int player1_Bom = 3;
     public int player2_Bom = 3;
@@ -55,7 +45,6 @@ public class GameManager : MonoBehaviour {
     public GameObject seven;
     public GameObject bar;
 
-    private bool CursorFlag;
 
 
     private GameObject MainCam;
@@ -70,8 +59,7 @@ public class GameManager : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        Player = Instantiate(Player);
-
+        Instantiate(Player);
         for(int i = 0; i < 4; i++)
         {
             Instantiate(playerhpSprite[i]);
@@ -93,139 +81,27 @@ public class GameManager : MonoBehaviour {
         FirstSetFlag = Player.GetComponent<CharMove>().GetFlag();
         SecondSetFlag = Player2.GetComponent<CharMove2>().GetFlag();
 
-        //if (Input.anyKeyDown)
+        Debug.Log(player1_Warp);
+        Debug.Log(player2_Warp);
+
+        //switch (selectNumber1)
         //{
-        //    foreach (KeyCode code in Enum.GetValues(typeof(KeyCode)))
-        //    {
-        //        if (Input.GetKeyDown(code))
-        //        {
-        //            //処理を書く
-        //            Debug.Log(code);
-        //            break;
-        //        }
-        //    }
+        //    case 0:Player1ItemView[0].GetComponent<Image>().color = new Color(1,1,0.7f);
+        //        break;
+        //    case 1: Player1ItemView[0].GetComponent<Image>().color = new Color(50, 0, 0, 255);
+        //        break;
+        //    case 2: Player1ItemView[0].GetComponent<Image>().color = new Color(255, 0, 0, 255);
+        //        break;
+        //    case 3: Player1ItemView[0].GetComponent<Image>().color = new Color(255, 0, 0, 255);
+        //        break;
         //}
-
-        Debug.Log(Input.GetAxis("Horizontal"));
-        Debug.Log(Input.GetAxis("Vertical"));
-        
-        //Debug.Log(selectNumber1);
-        //Debug.Log(selectNumber2);
-
-        if (FirstSetFlag&&SecondSetFlag&&MainCam.active&&UseBom==false&&UseWarp==false)
-        {
-            switch (selectNumber1)
-            {
-                case 0:
-                    Player1ItemView[0].GetComponent<Image>().color = new Color(1, 1, 0.7f);
-                    Player1ItemView[1].GetComponent<Image>().color = new Color(1, 1, 1.0f);
-                    Player1ItemView[2].GetComponent<Image>().color = new Color(1, 1, 1.0f);
-                    if (Input.GetKeyDown(KeyCode.DownArrow)|| Input.GetAxis("Vertical")==-1&&CursorFlag ==false)
-                    {
-                        selectNumber1++;
-                        CursorFlag = true;
-                    }
-                    if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(DecideButton))
-                    {
-                        BomButtonClick();
-
-                    }
-                    break;
-                case 1:
-                    Player1ItemView[0].GetComponent<Image>().color = new Color(1, 1, 1.0f);
-                    Player1ItemView[1].GetComponent<Image>().color = new Color(1, 1, 0.7f);
-                    Player1ItemView[2].GetComponent<Image>().color = new Color(1, 1, 1.0f);
-                    if (Input.GetKeyDown(KeyCode.DownArrow) && FirstSetFlag || Input.GetAxis("Vertical") == -1 && CursorFlag == false)
-                    {
-                        selectNumber1++;
-                    }
-                    if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetAxis("Vertical") == 1 && CursorFlag == false)
-                    {
-                        selectNumber1--;
-                    }
-                    if (Input.GetKeyDown(KeyCode.Space)||Input.GetKeyDown(DecideButton))
-                    {
-                        WarpButtonClick();
-                    }
-                    break;
-                case 2:
-                    Player1ItemView[0].GetComponent<Image>().color = new Color(1, 1, 1.0f);
-                    Player1ItemView[1].GetComponent<Image>().color = new Color(1, 1, 1.0f);
-                    Player1ItemView[2].GetComponent<Image>().color = new Color(1, 1, 0.7f);
-                    if (Input.GetKeyDown(KeyCode.UpArrow) && FirstSetFlag || Input.GetAxis("Vertical") == 1 && CursorFlag == false)
-                    {
-                        selectNumber1--;
-                        CursorFlag = true;
-                    }
-                    if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(DecideButton) && CursorFlag == false)
-                    {
-                        changeTurn();
-                    }
-                    break;
-            }
-            switch (selectNumber2)
-            {
-                case 0:
-                    Player2ItemView[0].GetComponent<Image>().color = new Color(1, 1, 0.7f);
-                    Player2ItemView[1].GetComponent<Image>().color = new Color(1, 1, 1.0f);
-                    Player2ItemView[2].GetComponent<Image>().color = new Color(1, 1, 1.0f);
-                    if (Input.GetKeyDown(KeyCode.DownArrow) || Input.GetAxis("Vertical") == -1 && CursorFlag == false)
-                    {
-                        selectNumber2++;
-                        CursorFlag = true;
-                    }
-                    if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(DecideButton2))
-                    {
-                        BomButtonClick();
-                    }
-                    break;
-                case 1:
-                    Player2ItemView[0].GetComponent<Image>().color = new Color(1, 1, 1.0f);
-                    Player2ItemView[1].GetComponent<Image>().color = new Color(1, 1, 0.7f);
-                    Player2ItemView[2].GetComponent<Image>().color = new Color(1, 1, 1.0f);
-                    if (Input.GetKeyDown(KeyCode.DownArrow) || Input.GetAxis("Vertical") == -1 && CursorFlag == false)
-                    {
-                        selectNumber2++;
-                        CursorFlag = true;
-                    }
-                    if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetAxis("Vertical") == 1 && CursorFlag == false)
-                    {
-                        selectNumber2--;
-                        CursorFlag = true;
-                    }
-                    if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(DecideButton2))
-                    {
-                        WarpButtonClick();
-                    }
-                    break;
-                case 2:
-                    Player2ItemView[0].GetComponent<Image>().color = new Color(1, 1, 1.0f);
-                    Player2ItemView[1].GetComponent<Image>().color = new Color(1, 1, 1.0f);
-                    Player2ItemView[2].GetComponent<Image>().color = new Color(1, 1, 0.7f);
-                    if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetAxis("Vertical") == 1 && CursorFlag == false)
-                    {
-                        selectNumber2--;
-                        CursorFlag = true;
-                    }
-                    if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(DecideButton2))
-                    {
-                        changeTurn();
-                    }
-                    break;
-            }
-        }
-        if (Input.GetAxis("Vertical") == 0)
-        {
-            CursorFlag = false;
-        }
-
-
-
-
-
-
-
-
+        //switch (selectNumber2)
+        //{
+        //    case 0: break;
+        //    case 1: break;
+        //    case 2: break;
+        //    case 3: break;
+        //}
 
         Player1ItemView[0].GetComponentInChildren<Text>().text = "爆弾 x " + player1_Bom.ToString();
 
@@ -234,7 +110,6 @@ public class GameManager : MonoBehaviour {
         if (FirstSetFlag == true && SecondSetFlag == true&&insflag3 ==false)
         {
             turn = 1;
-
             insflag3 = true;
             if (MainCam.activeSelf)
             {
@@ -245,7 +120,6 @@ public class GameManager : MonoBehaviour {
             {
                 MainCam.SetActive(true);
                 SubCam.SetActive(false);
-
             }
         }
 
@@ -253,37 +127,17 @@ public class GameManager : MonoBehaviour {
         //Debug.Log(turn);
         if (GameObject.FindGameObjectsWithTag("Bom").Length > 0)
         {
-            UseBom = true;
+            UseItemflag = true;
         }
         else
         {
-            UseBom = false;
-        }
-        if (GameObject.FindGameObjectsWithTag("Warp").Length > 0)
-        {
-            UseWarp = true;
-        }
-        else
-        {
-            UseWarp = false;
-        }
-
-
-        //Debug.Log(turn);
-
-        if (FirstSetFlag && insflag ==false)
-        {
-            Player2 = Instantiate(Player2, new Vector3(5, 1.5f, 0),Quaternion.identity);
-            insflag = true;
+            UseItemflag = false;
         }
 
 
         if (turn == 1)
         {
-
-            insflag4 = false;
-            Player.GetComponent<MeshRenderer>().material.color = new Color(Player.GetComponent<MeshRenderer>().material.color.r, Player.GetComponent<MeshRenderer>().material.color.g, Player.GetComponent<MeshRenderer>().material.color.b, 1.0f);
-
+            
             for (int i = 0; i < Player1ItemView.Length; i++)
             {
                 Player1ItemView[i].SetActive(true);
@@ -291,11 +145,8 @@ public class GameManager : MonoBehaviour {
             }
             TurnWindow.GetComponent<Text>().text = "ターン:player1";
         }
-        if (turn == 2)
+        if(turn == 2)
         {
-            insflag4 = false;
-            Player2.GetComponent<MeshRenderer>().material.color = new Color(Player2.GetComponent<MeshRenderer>().material.color.r, Player2.GetComponent<MeshRenderer>().material.color.g, Player2.GetComponent<MeshRenderer>().material.color.b, 1.0f);
-
             for (int i = 0; i < Player1ItemView.Length; i++)
             {
                 Player1ItemView[i].SetActive(false);
@@ -304,7 +155,16 @@ public class GameManager : MonoBehaviour {
             TurnWindow.GetComponent<Text>().text = "ターン:player2";
         }
 
-        if (UseBom==true||UseWarp==true)
+        //Debug.Log(turn);
+
+        if (FirstSetFlag && insflag ==false)
+        {
+            Instantiate(Player2, new Vector3(5, 1.5f, 0),Quaternion.identity);
+            insflag = true;
+        }
+
+        
+        if(UseItemflag==true)
         {
             Player1ItemView[2].SetActive(false);
             Player2ItemView[2].SetActive(false);
@@ -314,26 +174,14 @@ public class GameManager : MonoBehaviour {
 
     public void changeTurn()
     {
-        if (FirstSetFlag == true && SecondSetFlag == true && insflag4 == false)
+        if(turn == 1)
         {
-            if (turn == 1)
-            {
-                turn = 2;
-                selectNumber2 = 0;
+            turn = 2;
 
-            }
-            else
-            {
-                turn = 1;
-                selectNumber1 = 0;
-
-            }
-            insflag4 = true;
-            selectNumber1 = 0;
-            selectNumber2 = 0;
-            UseBom = false;
-            UseWarp = false;
-
+        }
+        else
+        {
+            turn = 1;
         }
 
         if (MainCam.activeSelf)
@@ -346,9 +194,7 @@ public class GameManager : MonoBehaviour {
             MainCam.SetActive(true);
             SubCam.SetActive(false);
         }
-        useItemFlag = false;
-        useItemFlag2 = false;
-
+        insflag2 = false;
         //TurnChangeButton.SetActive(false);
     }
     public void cameraChange()
@@ -362,14 +208,9 @@ public class GameManager : MonoBehaviour {
     public void BomButtonClick()
     {
         //爆弾ボタンクリックで生成
-        if (useItemFlag == false)
+        if (insflag2 == false)
         {
             //TurnChangeButton.SetActive(true);
-            
-
-            //insflag is 消えた？
-
-
 
             if (turn == 1&&player1_Bom>0)
             {
@@ -381,13 +222,13 @@ public class GameManager : MonoBehaviour {
                 Instantiate(bom2);
                 player2_Bom--;
             }
-            useItemFlag = true;
+            insflag2 = true;
         }
     }
     public void WarpButtonClick()
     {
         //爆弾ボタンクリックで生成
-        if (useItemFlag2 == false)
+        if (insflag2 == false)
         {
             //TurnChangeButton.SetActive(true);
 
@@ -403,7 +244,7 @@ public class GameManager : MonoBehaviour {
                 player2_Warp--;
                 Player2ItemView[1].GetComponentInChildren<Text>().text = "ワープ x " + player2_Warp.ToString();
             }
-            useItemFlag2 = true;
+            insflag2 = true;
         }
     }
     public void AddBom()

@@ -11,7 +11,8 @@ public class CharMove : MonoBehaviour {
     private int y = 0;
 
     public KeyCode stop;
-    private bool CursorFlag;
+    public KeyCode[] arrow;
+
 
 
     // Use this for initialization
@@ -26,38 +27,34 @@ public class CharMove : MonoBehaviour {
         {
             if (y < 5)
             {
-                if (Input.GetKeyDown(KeyCode.DownArrow)  || Input.GetAxis("Vertical") == -1 && CursorFlag == false)
+                if (Input.GetKeyDown(KeyCode.DownArrow)||Input.GetKeyDown(arrow[0]))
                 {
                     transform.Translate(new Vector3(0, 0, -1));
                     y++;
-                    CursorFlag = true;
                 }
             }
             if (y > 0)
             {
-                if (Input.GetKeyDown(KeyCode.UpArrow)  || Input.GetAxis("Vertical") == 1 && CursorFlag == false)
+                if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(arrow[1]))
                 {
                     transform.Translate(new Vector3(0, 0, 1));
                     y--;
-                    CursorFlag = true;
                 }
             }
             if (x > 0)
             {
-                if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetAxis("Horizontal") == -1 && CursorFlag == false)
+                if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(arrow[2]))
                 {
                     transform.Translate(new Vector3(-1, 0, 0));
                     x--;
-                    CursorFlag = true;
                 }
             }
             if (x < 5)
             {
-                if (Input.GetKeyDown(KeyCode.RightArrow) ||Input.GetAxis("Horizontal") == 1 && CursorFlag ==false)
+                if (Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(arrow[3]))
                 {
                     transform.Translate(new Vector3(1, 0, 0));
                     x++;
-                    CursorFlag = true;
                 }
             }
         }
@@ -65,10 +62,6 @@ public class CharMove : MonoBehaviour {
         {
             transform.GetComponent<MeshRenderer>().material.color = new Color(transform.GetComponent<MeshRenderer>().material.color.r, transform.GetComponent<MeshRenderer>().material.color.g, transform.GetComponent<MeshRenderer>().material.color.b, 0.0f);
             SetFlag = true;
-        }
-        if (Input.GetAxis("Vertical") == 0 && Input.GetAxis("Horizontal") == 0)
-        {
-            CursorFlag = false;
         }
     }
 

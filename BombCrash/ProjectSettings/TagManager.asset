@@ -8,7 +8,6 @@ TagManager:
   - Floor
   - Player1
   - Player2
-  - Warp
   layers:
   - Default
   - TransparentFX
