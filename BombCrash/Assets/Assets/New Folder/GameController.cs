@@ -173,6 +173,8 @@ public class GameController : MonoBehaviour
             state = State.Stay;
 
             Chack();
+            //爆弾一個追加
+            gamemanager.GetComponent<GameManager>().AddBom();
             //プレイヤー交代
             CheageTurn();
             playbt.interactable = true;
