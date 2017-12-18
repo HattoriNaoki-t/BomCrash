@@ -112,7 +112,7 @@ public class GameManager : MonoBehaviour {
         //Debug.Log(selectNumber1);
         //Debug.Log(selectNumber2);
 
-        if (FirstSetFlag&&SecondSetFlag&&MainCam.active&&UseBom==false&&UseWarp==false)
+        if (FirstSetFlag&&SecondSetFlag&&MainCam.active==true&&UseBom==false&&UseWarp==false)
         {
             switch (selectNumber1)
             {
@@ -214,7 +214,7 @@ public class GameManager : MonoBehaviour {
                     break;
             }
         }
-        if (Input.GetAxis("Vertical") == 0)
+        if (Input.GetAxis("Vertical") == 0 && MainCam.active == true)
         {
             CursorFlag = false;
         }

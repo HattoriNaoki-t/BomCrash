@@ -42,6 +42,8 @@ public class ReelController : MonoBehaviour
 
 
 
+  
+
     void Awake()
     {
 
@@ -54,40 +56,84 @@ public class ReelController : MonoBehaviour
 
             Vector3 pos = new Vector3(0.0f, -2.0f + (2.0f * i), 0.0f);
 
-            int tmp = Random.Range(0, imgobj.Length);//絵柄をランダムで生成
+           int tmp = Random.Range(0, imgobj.Length);//絵柄をランダムで生成
 
 
-
-            if (i != 0 && i < 16)
+            switch (i)
             {
-
-                while (current[i - 1] == tmp)
-                { //前の絵柄と同じにならないように再抽選
-
-                    tmp = Random.Range(0, imgobj.Length);
-
-                }
+                case 0:
+                    tmp = Random.Range(0, imgobj.Length);//絵柄をランダムで生成
+                    break;
+                case 1:
+                    tmp = 3;
+                    break;
+                case 2:
+                    tmp = 0;
+                    break;
+                case 3:
+                    tmp = 2;
+                    break;
+                case 4:
+                    tmp = 5;
+                    break;
+                case 5:
+                    tmp = Random.Range(0, imgobj.Length);//絵柄をランダムで生成
+                    break;
+                case 6:
+                    tmp = Random.Range(0, imgobj.Length);//絵柄をランダムで生成
+                    break;
+                case 7:
+                    tmp = 4;
+                    break;
+                case 8:
+                    tmp = 0;
+                    break;
+                case 9:
+                    tmp = 2;
+                    break;
+                case 10:
+                    tmp = 1;
+                    break;
+                case 11:
+                    tmp = Random.Range(0, imgobj.Length);//絵柄をランダムで生成
+                    break;
 
             }
-            else if (i == 17)
-            {
 
-                tmp = current[0];
+            ///////////////////////////////////////////////////
+            //別に消してくれてもかまわない
+            //int tmp = 1;
 
-            }
-            else if (i == 18)
-            {
+            //if (i != 0 && i < 16)
+            //{
 
-                tmp = current[1];
+            //    while (current[i - 1] == tmp)
+            //    { //前の絵柄と同じにならないように再抽選
 
-            }
-            else if (i == 19)
-            {
+            //        tmp = Random.Range(0, imgobj.Length);
 
-                tmp = current[2];
+            //    }
 
-            }
+            //}
+            //else if (i == 17)
+            //{
 
+            //    tmp = current[0];
+
+            //}
+            //else if (i == 18)
+            //{
+
+            //    tmp = current[1];
+
+            //}
+            //else if (i == 19)
+            //{
+
+            //    tmp = current[2];
+
+            //}
+            ///////////////////////////////////////////////
 
 
             current[i] = tmp;
@@ -125,7 +171,7 @@ public class ReelController : MonoBehaviour
         ///////////////////////////////////////////////////////
 
 
-        if (pos.localPosition.y < -8.1)
+        if (pos.localPosition.y< -8.1)
         {
 
             pos.localPosition = initpos;
@@ -149,7 +195,7 @@ public class ReelController : MonoBehaviour
 
                 flg = 0;
 
-                pos.localPosition = new Vector3(pos.localPosition.x, pos.localPosition.y - 0.03f, pos.localPosition.z);
+                pos.localPosition = new Vector3(pos.localPosition.x, pos.localPosition.y - 0.04f, pos.localPosition.z);
 
             }
             else
