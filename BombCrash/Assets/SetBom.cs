@@ -15,7 +15,12 @@ public class SetBom : MonoBehaviour {
     private int y = 0;
 
     public KeyCode DecideButton;
+    public KeyCode DecideButton2;
 
+
+    public GameObject GameCom;
+
+    private int turn;
 
     public bool bomflag;
 
@@ -38,55 +43,106 @@ public class SetBom : MonoBehaviour {
         //    Instantiate(bom,new Vector3(0,5,5),Quaternion.identity);
         //    bomflag = true;
         //}
-
+        turn = GameCom.GetComponent<GameManager>().getTurn();
 
         //Debug.Log(FirstSetFlag);
         if (FirstSetFlag&&SecondSetFlag)
         {
-            if (y < 5)
+            if (turn == 1)
             {
-                if (Input.GetKeyDown(KeyCode.DownArrow) || Input.GetAxis("Vertical") == -1 && CursorFlag == false)
+                if (y < 5)
                 {
-                    transform.Translate(new Vector3(0, 0, -1));
-                    y++;
-                    CursorFlag = true;
+                    if (Input.GetKeyDown(KeyCode.DownArrow) || Input.GetAxisRaw("joy1 Y") == 1 && CursorFlag == false)
+                    {
+                        transform.Translate(new Vector3(0, 0, -1));
+                        y++;
+                        CursorFlag = true;
+                    }
                 }
-            }
-            if (y > 0)
-            {
-                if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetAxis("Vertical") == 1 && CursorFlag == false)
+                if (y > 0)
                 {
-                    transform.Translate(new Vector3(0, 0, 1));
-                    y--;
-                    CursorFlag = true;
+                    if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetAxisRaw("joy1 Y") == -1 && CursorFlag == false)
+                    {
+                        transform.Translate(new Vector3(0, 0, 1));
+                        y--;
+                        CursorFlag = true;
+                    }
                 }
-            }
-            if (x > 0)
-            {
-                if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetAxis("Horizontal") == -1 && CursorFlag == false)
+                if (x > 0)
                 {
-                    transform.Translate(new Vector3(-1, 0, 0));
-                    x--;
-                    CursorFlag = true;
+                    if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetAxisRaw("joy1 X") == -1 && CursorFlag == false)
+                    {
+                        transform.Translate(new Vector3(-1, 0, 0));
+                        x--;
+                        CursorFlag = true;
+                    }
                 }
-            }
-            if (x < 5)
-            {
-                if (Input.GetKeyDown(KeyCode.RightArrow) || Input.GetAxis("Horizontal") == 1 && CursorFlag == false)
+                if (x < 5)
                 {
-                    transform.Translate(new Vector3(1, 0, 0));
-                    x++;
-                    CursorFlag = true;
+                    if (Input.GetKeyDown(KeyCode.RightArrow) || Input.GetAxisRaw("joy1 X") == 1 && CursorFlag == false)
+                    {
+                        transform.Translate(new Vector3(1, 0, 0));
+                        x++;
+                        CursorFlag = true;
+                    }
                 }
-            }
-            if (Input.GetKeyDown(KeyCode.Space)||Input.GetKeyDown(DecideButton))
-            {
-                transform.GetComponent<Rigidbody>().useGravity = true;
-            }
+                if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(DecideButton))
+                {
+                    transform.GetComponent<Rigidbody>().useGravity = true;
+                }
 
-            if (Input.GetAxis("Vertical") == 0 && Input.GetAxis("Horizontal") == 0)
+                if (Input.GetAxisRaw("joy1 X") == 0 && Input.GetAxisRaw("joy1 Y") == 0)
+                {
+                    CursorFlag = false;
+                }
+            }
+            if (turn == 2)
             {
-                CursorFlag = false;
+                if (y < 5)
+                {
+                    if (Input.GetKeyDown(KeyCode.DownArrow) || Input.GetAxisRaw("joy2 Y") == 1 && CursorFlag == false)
+                    {
+                        transform.Translate(new Vector3(0, 0, -1));
+                        y++;
+                        CursorFlag = true;
+                    }
+                }
+                if (y > 0)
+                {
+                    if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetAxisRaw("joy2 Y") == -1 && CursorFlag == false)
+                    {
+                        transform.Translate(new Vector3(0, 0, 1));
+                        y--;
+                        CursorFlag = true;
+                    }
+                }
+                if (x > 0)
+                {
+                    if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetAxisRaw("joy2 X") == -1 && CursorFlag == false)
+                    {
+                        transform.Translate(new Vector3(-1, 0, 0));
+                        x--;
+                        CursorFlag = true;
+                    }
+                }
+                if (x < 5)
+                {
+                    if (Input.GetKeyDown(KeyCode.RightArrow) || Input.GetAxisRaw("joy2 X") == 1 && CursorFlag == false)
+                    {
+                        transform.Translate(new Vector3(1, 0, 0));
+                        x++;
+                        CursorFlag = true;
+                    }
+                }
+                if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(DecideButton2))
+                {
+                    transform.GetComponent<Rigidbody>().useGravity = true;
+                }
+
+                if (Input.GetAxisRaw("joy2 X")  == 0 && Input.GetAxisRaw("joy2 Y") == 0)
+                {
+                    CursorFlag = false;
+                }
             }
         }
         

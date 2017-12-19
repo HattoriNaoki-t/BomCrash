@@ -30,7 +30,6 @@ public class GameController : MonoBehaviour
 
     public Button playbt;
 
-    public KeyCode stop;
 
     public GameObject[] reels;
 
@@ -64,6 +63,8 @@ public class GameController : MonoBehaviour
     //サウンド
     public AudioClip big_Regular;
     public AudioClip regular;
+    public AudioClip smallhitSound;
+
     private AudioSource[] sound;
 
     //出すエフェクト
@@ -79,7 +80,7 @@ public class GameController : MonoBehaviour
 
     State state = State.Start;
 
-
+    private int turn;
 
     // Use this for initialization
 
@@ -155,6 +156,9 @@ public class GameController : MonoBehaviour
 
     void Update()
     {
+
+        turn = gamemanager.GetComponent<GameManager>().getTurn();
+
         //レギュラー中かレギュラー終了の判定
         if (state == State.Init)
         {
@@ -187,47 +191,97 @@ public class GameController : MonoBehaviour
             /////////////////////////////////////////////////////////////////
             if (SubCam.active == true)
             {
-                if (Input.GetAxisRaw("Vertical") < 0)
-                {//レギュラー判定(相手ターン時)
-                    Effect_Check();
-
-                    //ボタン
-                    Button_Effect();
-                    //上に傾いている
-                    playbt.interactable = false;
-
-                    stopline_len = 0;
-
-                    state = State.Playing;
-
-                    for (int i = 0; i < 3; i++)
+                if (turn == 1)
+                {
+                    if (Input.GetAxisRaw("joy1 Y") < 0)
                     {
+                        //レギュラー判定(相手ターン時)
+                        Effect_Check();
 
-                        rc[i].Reel_Move();
+                        //ボタン
+                        Button_Effect();
+                        //上に傾いている
+                        playbt.interactable = false;
 
-                        stopbt[i].interactable = true;
+                        stopline_len = 0;
 
+                        state = State.Playing;
+
+                        for (int i = 0; i < 3; i++)
+                        {
+
+                            rc[i].Reel_Move();
+
+                            stopbt[i].interactable = true;
+                        }
+                    }
+                    else if (0 < Input.GetAxisRaw("joy1 Y"))
+                    {//レギュラー判定(相手ターン時)
+                        Effect_Check();
+                        //ボタン
+                        Button_Effect();
+                        //下に傾いている
+                        playbt.interactable = false;
+
+                        stopline_len = 0;
+
+                        state = State.Playing;
+
+                        for (int i = 0; i < 3; i++)
+                        {
+
+                            rc[i].Reel_Move();
+
+                            stopbt[i].interactable = true;
+
+                        }
                     }
                 }
-                else if (0 < Input.GetAxisRaw("Vertical"))
-                {//レギュラー判定(相手ターン時)
-                    Effect_Check();
-                    //ボタン
-                    Button_Effect();
-                    //下に傾いている
-                    playbt.interactable = false;
 
-                    stopline_len = 0;
-
-                    state = State.Playing;
-
-                    for (int i = 0; i < 3; i++)
+                if (turn == 2)
+                {
+                    if (Input.GetAxisRaw("joy2 Y") < 0)
                     {
+                        //レギュラー判定(相手ターン時)
+                        Effect_Check();
 
-                        rc[i].Reel_Move();
+                        //ボタン
+                        Button_Effect();
+                        //上に傾いている
+                        playbt.interactable = false;
 
-                        stopbt[i].interactable = true;
+                        stopline_len = 0;
 
+                        state = State.Playing;
+
+                        for (int i = 0; i < 3; i++)
+                        {
+
+                            rc[i].Reel_Move();
+
+                            stopbt[i].interactable = true;
+                        }
+                    }
+                    else if (0 < Input.GetAxisRaw("joy2 Y"))
+                    {//レギュラー判定(相手ターン時)
+                        Effect_Check();
+                        //ボタン
+                        Button_Effect();
+                        //下に傾いている
+                        playbt.interactable = false;
+
+                        stopline_len = 0;
+
+                        state = State.Playing;
+
+                        for (int i = 0; i < 3; i++)
+                        {
+
+                            rc[i].Reel_Move();
+
+                            stopbt[i].interactable = true;
+
+                        }
                     }
                 }
             }
@@ -392,6 +446,8 @@ public class GameController : MonoBehaviour
                 small_hit.Play();
                 /////////////////////
                 Debug.Log("爆弾が揃った");
+                sound[2].Play();
+
                 gamemanager.GetComponent<GameManager>().AddBom();
 
                 break;
@@ -408,6 +464,8 @@ public class GameController : MonoBehaviour
                 small_hit.Play();
                 /////////////////////////////////////
                 Debug.Log("ハートが揃った");
+                sound[2].Play();
+
                 gamemanager.GetComponent<GameManager>().AddHp();
                 break;
 
@@ -417,6 +475,8 @@ public class GameController : MonoBehaviour
                 small_hit.Play();
                 ///追加文終了////////////////////////////////
                 Debug.Log("ゾウさんが揃った");
+                sound[2].Play();
+
                 gamemanager.GetComponent<GameManager>().AddWarp();
 
                 break;

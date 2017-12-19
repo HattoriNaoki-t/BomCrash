@@ -51,11 +51,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6bc4427802bc1644c8c1255bbd9e8c44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bom: {fileID: 1050952704999130, guid: 3aafe167c916f2a41ab92a23ebc4ada0, type: 2}
+  bom: {fileID: 1325975686997544, guid: 1771703137d8b504bb51365e9a3c1d5d, type: 2}
   bom2: {fileID: 1325975686997544, guid: 4567c84a6ab9d384fb5c0f2660aaca76, type: 2}
+  DecideButton: 355
+  DecideButton2: 375
   Player: {fileID: 1960116515939998, guid: bf702ca1ffd30de40b9abbb5b9d7761f, type: 2}
   Player2: {fileID: 1227733560372420, guid: 392417dd2494b404ba9a0431ea2a89fe, type: 2}
-  Player1ItemView: {fileID: 0}
-  Player2ItemView: {fileID: 0}
+  Warp: {fileID: 1786045257379516, guid: 775024093250411469c72c5e9f0e24e7, type: 2}
+  Player1ItemView:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  Player2ItemView:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   TurnWindow: {fileID: 0}
   TurnChangeButton: {fileID: 0}
+  player1_Bom: 3
+  player2_Bom: 3
+  player1_Warp: 1
+  player2_Warp: 1
+  player1_Hp: 2
+  player2_Hp: 2
+  seven: {fileID: 1004502433813708, guid: 8c84910fc9d863945a230b8624bd48e1, type: 2}
+  bar: {fileID: 1050952704999130, guid: 3aafe167c916f2a41ab92a23ebc4ada0, type: 2}
+  selectNumber1: 0
+  selectNumber2: 0
+  playerhpSprite:
+  - {fileID: 1144357413000970, guid: df5dc2f0be56f4140a32025161ff365f, type: 2}
+  - {fileID: 1957937237798014, guid: 03b46cd9d79edb64c9aa395ecda2d283, type: 2}
+  - {fileID: 1483486972797706, guid: 9a7c9bb0e902fd04b86ed88a2464cc3d, type: 2}
+  - {fileID: 1363099363936280, guid: 9a1e0192d275de742b91db59ece951b8, type: 2}

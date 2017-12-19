@@ -6,8 +6,8 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Title.unity
-    guid: 63452e07f7eb21242b04b33606b6ad57
+    path: Assets/efect Mori/Title/Title.unity
+    guid: 3bcb714d797ad2944a657065f6b793dd
   - enabled: 1
     path: Assets/Scenes/Main.unity
     guid: 633609f36e54ff54480fe1f95219414c

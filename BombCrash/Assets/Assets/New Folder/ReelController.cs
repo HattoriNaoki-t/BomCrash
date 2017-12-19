@@ -13,7 +13,11 @@ public class ReelController : MonoBehaviour
 
 
     public KeyCode stopKey;
+    public KeyCode stopKey2;
+    
+    public GameManager gamemanager;
 
+    private int turn_num;
 
     public int line_ID = 0; //リールのid
 
@@ -159,12 +163,26 @@ public class ReelController : MonoBehaviour
     void Update()
     {
 
+        turn_num = gamemanager.GetComponent<GameManager>().getTurn();
 
-        if (Input.GetKeyDown(stopKey))
+        if (turn_num == 1)
         {
-            turn = false;
 
-            gc.Stopbt_f(line_ID);
+            if (Input.GetKeyDown(stopKey))
+            {
+                turn = false;
+
+                gc.Stopbt_f(line_ID);
+            }
+        }
+        if (turn_num==2)
+        {
+            if (Input.GetKeyDown(stopKey2))
+            {
+                turn = false;
+
+                gc.Stopbt_f(line_ID);
+            }
         }
 
 

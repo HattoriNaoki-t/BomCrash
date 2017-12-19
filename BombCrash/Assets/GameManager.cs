@@ -106,8 +106,7 @@ public class GameManager : MonoBehaviour {
         //    }
         //}
 
-        Debug.Log(Input.GetAxis("Horizontal"));
-        Debug.Log(Input.GetAxis("Vertical"));
+        //Debug.Log(Input.GetAxisRaw("joy2 X"));
         
         //Debug.Log(selectNumber1);
         //Debug.Log(selectNumber2);
@@ -120,7 +119,7 @@ public class GameManager : MonoBehaviour {
                     Player1ItemView[0].GetComponent<Image>().color = new Color(1, 1, 0.7f);
                     Player1ItemView[1].GetComponent<Image>().color = new Color(1, 1, 1.0f);
                     Player1ItemView[2].GetComponent<Image>().color = new Color(1, 1, 1.0f);
-                    if (Input.GetKeyDown(KeyCode.DownArrow)|| Input.GetAxis("Vertical")==-1&&CursorFlag ==false)
+                    if (Input.GetKeyDown(KeyCode.DownArrow)|| Input.GetAxisRaw("joy1 Y") == 1&&CursorFlag ==false)
                     {
                         selectNumber1++;
                         CursorFlag = true;
@@ -135,11 +134,11 @@ public class GameManager : MonoBehaviour {
                     Player1ItemView[0].GetComponent<Image>().color = new Color(1, 1, 1.0f);
                     Player1ItemView[1].GetComponent<Image>().color = new Color(1, 1, 0.7f);
                     Player1ItemView[2].GetComponent<Image>().color = new Color(1, 1, 1.0f);
-                    if (Input.GetKeyDown(KeyCode.DownArrow) && FirstSetFlag || Input.GetAxis("Vertical") == -1 && CursorFlag == false)
+                    if (Input.GetKeyDown(KeyCode.DownArrow) && FirstSetFlag || Input.GetAxisRaw("joy1 Y") == 1 && CursorFlag == false)
                     {
                         selectNumber1++;
                     }
-                    if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetAxis("Vertical") == 1 && CursorFlag == false)
+                    if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetAxisRaw("joy1 Y") == -1 && CursorFlag == false)
                     {
                         selectNumber1--;
                     }
@@ -152,7 +151,7 @@ public class GameManager : MonoBehaviour {
                     Player1ItemView[0].GetComponent<Image>().color = new Color(1, 1, 1.0f);
                     Player1ItemView[1].GetComponent<Image>().color = new Color(1, 1, 1.0f);
                     Player1ItemView[2].GetComponent<Image>().color = new Color(1, 1, 0.7f);
-                    if (Input.GetKeyDown(KeyCode.UpArrow) && FirstSetFlag || Input.GetAxis("Vertical") == 1 && CursorFlag == false)
+                    if (Input.GetKeyDown(KeyCode.UpArrow) && FirstSetFlag || Input.GetAxisRaw("joy1 Y") == -1 && CursorFlag == false)
                     {
                         selectNumber1--;
                         CursorFlag = true;
@@ -169,7 +168,7 @@ public class GameManager : MonoBehaviour {
                     Player2ItemView[0].GetComponent<Image>().color = new Color(1, 1, 0.7f);
                     Player2ItemView[1].GetComponent<Image>().color = new Color(1, 1, 1.0f);
                     Player2ItemView[2].GetComponent<Image>().color = new Color(1, 1, 1.0f);
-                    if (Input.GetKeyDown(KeyCode.DownArrow) || Input.GetAxis("Vertical") == -1 && CursorFlag == false)
+                    if (Input.GetKeyDown(KeyCode.DownArrow) || Input.GetAxisRaw("joy2 Y") == 1 && CursorFlag == false)
                     {
                         selectNumber2++;
                         CursorFlag = true;
@@ -183,12 +182,12 @@ public class GameManager : MonoBehaviour {
                     Player2ItemView[0].GetComponent<Image>().color = new Color(1, 1, 1.0f);
                     Player2ItemView[1].GetComponent<Image>().color = new Color(1, 1, 0.7f);
                     Player2ItemView[2].GetComponent<Image>().color = new Color(1, 1, 1.0f);
-                    if (Input.GetKeyDown(KeyCode.DownArrow) || Input.GetAxis("Vertical") == -1 && CursorFlag == false)
+                    if (Input.GetKeyDown(KeyCode.DownArrow) || Input.GetAxisRaw("joy2 Y") == 1 && CursorFlag == false)
                     {
                         selectNumber2++;
                         CursorFlag = true;
                     }
-                    if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetAxis("Vertical") == 1 && CursorFlag == false)
+                    if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetAxisRaw("joy2 Y") == -1 && CursorFlag == false)
                     {
                         selectNumber2--;
                         CursorFlag = true;
@@ -202,7 +201,7 @@ public class GameManager : MonoBehaviour {
                     Player2ItemView[0].GetComponent<Image>().color = new Color(1, 1, 1.0f);
                     Player2ItemView[1].GetComponent<Image>().color = new Color(1, 1, 1.0f);
                     Player2ItemView[2].GetComponent<Image>().color = new Color(1, 1, 0.7f);
-                    if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetAxis("Vertical") == 1 && CursorFlag == false)
+                    if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetAxisRaw("joy2 Y") == -1 && CursorFlag == false)
                     {
                         selectNumber2--;
                         CursorFlag = true;
@@ -214,11 +213,11 @@ public class GameManager : MonoBehaviour {
                     break;
             }
         }
-        if (Input.GetAxis("Vertical") == 0 && MainCam.active == true)
+        if ((Input.GetAxisRaw("joy1 Y") == 0 && MainCam.active == true&&turn==1)|| (Input.GetAxisRaw("joy2 Y") == 0 && MainCam.active == true && turn == 2))
         {
             CursorFlag = false;
         }
-
+        
 
 
 

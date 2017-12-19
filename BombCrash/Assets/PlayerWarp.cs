@@ -44,7 +44,7 @@ public class PlayerWarp : MonoBehaviour {
             }
             if (y < 5)
             {
-                if (Input.GetKeyDown(KeyCode.DownArrow) || Input.GetAxis("Vertical") == -1 && CursorFlag == false)
+                if (Input.GetKeyDown(KeyCode.DownArrow) || Input.GetAxisRaw("joy1 Y") == 1 && CursorFlag == false)
                 {
                     transform.Translate(new Vector3(0, 1, 0));
                     y++;
@@ -53,7 +53,7 @@ public class PlayerWarp : MonoBehaviour {
             }
             if (y > 0)
             {
-                if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetAxis("Vertical") == 1 && CursorFlag == false)
+                if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetAxisRaw("joy1 Y") == -1 && CursorFlag == false)
                 {
                     transform.Translate(new Vector3(0, -1, 0));
                     y--;
@@ -62,7 +62,7 @@ public class PlayerWarp : MonoBehaviour {
             }
             if (x > 0)
             {
-                if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetAxis("Horizontal") == -1 && CursorFlag == false)
+                if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetAxisRaw("joy1 X") == -1 && CursorFlag == false)
                 {
                     transform.Translate(new Vector3(-1, 0, 0));
                     x--;
@@ -71,14 +71,14 @@ public class PlayerWarp : MonoBehaviour {
             }
             if (x < 5)
             {
-                if (Input.GetKeyDown(KeyCode.RightArrow) || Input.GetAxis("Horizontal") == 1 && CursorFlag == false)
+                if (Input.GetKeyDown(KeyCode.RightArrow) || Input.GetAxisRaw("joy1 X") == 1 && CursorFlag == false)
                 {
                     transform.Translate(new Vector3(1, 0, 0));
                     x++;
                     CursorFlag = true;
                 }
             }
-            if (Input.GetAxis("Vertical") == 0 && Input.GetAxis("Horizontal") == 0)
+            if (Input.GetAxisRaw("joy1 Y") == 0 && Input.GetAxisRaw("joy1 X") == 0)
             {
                 CursorFlag = false;
             }
@@ -93,7 +93,7 @@ public class PlayerWarp : MonoBehaviour {
             }
             if (y < 5)
             {
-                if (Input.GetKeyDown(KeyCode.DownArrow) || Input.GetAxis("Vertical") == -1 && CursorFlag == false)
+                if (Input.GetKeyDown(KeyCode.DownArrow) || Input.GetAxisRaw("joy2 Y") == 1 && CursorFlag == false)
                 {
                     transform.Translate(new Vector3(0, 1, 0));
                     y++;
@@ -102,7 +102,7 @@ public class PlayerWarp : MonoBehaviour {
             }
             if (y > 0)
             {
-                if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetAxis("Vertical") == 1 && CursorFlag == false)
+                if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetAxisRaw("joy2 Y") == -1 && CursorFlag == false)
                 {
                     transform.Translate(new Vector3(0, -1, 0));
                     y--;
@@ -111,7 +111,7 @@ public class PlayerWarp : MonoBehaviour {
             }
             if (x > 0)
             {
-                if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetAxis("Horizontal") == -1 && CursorFlag == false)
+                if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetAxisRaw("joy2 X") == -1 && CursorFlag == false)
                 {
                     transform.Translate(new Vector3(-1, 0, 0));
                     x--;
@@ -120,14 +120,14 @@ public class PlayerWarp : MonoBehaviour {
             }
             if (x < 5)
             {
-                if (Input.GetKeyDown(KeyCode.RightArrow) || Input.GetAxis("Horizontal") == 1 && CursorFlag == false)
+                if (Input.GetKeyDown(KeyCode.RightArrow) || Input.GetAxisRaw("joy2 X") == 1 && CursorFlag == false)
                 {
                     transform.Translate(new Vector3(1, 0, 0));
                     x++;
                     CursorFlag = true;
                 }
             }
-            if (Input.GetAxis("Vertical") == 0 && Input.GetAxis("Horizontal") == 0)
+            if (Input.GetAxisRaw("joy2 Y") == 0 && Input.GetAxisRaw("joy2 X") == 0)
             {
                 CursorFlag = false;
             }
