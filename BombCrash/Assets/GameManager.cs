@@ -54,6 +54,8 @@ public class GameManager : MonoBehaviour {
 
     public GameObject seven;
     public GameObject bar;
+    public GameObject seven2;
+    public GameObject bar2;
 
     private bool CursorFlag;
 
@@ -421,10 +423,12 @@ public class GameManager : MonoBehaviour {
         if (turn == 1)
         {
             player1_Warp = 1;
+            Player1ItemView[1].GetComponentInChildren<Text>().text = "ワープ x " + player1_Warp.ToString();
         }
         if (turn == 2)
         {
             player2_Warp = 1;
+            Player2ItemView[1].GetComponentInChildren<Text>().text = "ワープ x " + player2_Warp.ToString();        
         }
     }
     public void AddHp()
@@ -444,11 +448,11 @@ public class GameManager : MonoBehaviour {
     {
         if (turn == 1)
         {
-                player1_Hp--;
+                player2_Hp--;
         }
         if (turn == 2)
         {
-                player2_Hp--;
+                player1_Hp--;
         }
     }
     public int getplayer1HP()
@@ -461,11 +465,25 @@ public class GameManager : MonoBehaviour {
     }
     public void Seven()
     {
-        Instantiate(seven);
+        if (turn == 1)
+        {
+            Instantiate(seven);
+        }
+        if(turn == 2)
+        {
+            Instantiate(seven2);
+        }
     }
     public void Bar()
     {
-        Instantiate(bar);
+        if (turn == 1)
+        {
+            Instantiate(bar);
+        }
+        if (turn == 2)
+        {
+            Instantiate(bar2);
+        }
     }
 
 }

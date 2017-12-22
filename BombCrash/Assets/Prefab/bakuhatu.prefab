@@ -22,8 +22,7 @@ GameObject:
   - component: {fileID: 198472536802595888}
   - component: {fileID: 199508787131155620}
   - component: {fileID: 96298493269444930}
-  - component: {fileID: 81675613016276508}
-  - component: {fileID: 82627213146017818}
+  - component: {fileID: 82811147910771592}
   m_Layer: 0
   m_Name: bakuhatu
   m_TagString: Untagged
@@ -75,14 +74,7 @@ Transform:
   m_Father: {fileID: 4492492468454230}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
---- !u!81 &81675613016276508
-AudioListener:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1091969902461282}
-  m_Enabled: 1
---- !u!82 &82627213146017818
+--- !u!82 &82811147910771592
 AudioSource:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -91,8 +83,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: dc06f2a1814e385448354d872733593c, type: 3}
-  m_PlayOnAwake: 0
+  m_audioClip: {fileID: 8300000, guid: 848865df0939cf140b416bc08f29a864, type: 3}
+  m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
   Loop: 0

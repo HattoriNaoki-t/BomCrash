@@ -42,7 +42,7 @@ public class SetBom : MonoBehaviour {
         //{
         //    Instantiate(bom,new Vector3(0,5,5),Quaternion.identity);
         //    bomflag = true;
-        //}
+        //} 
         turn = GameCom.GetComponent<GameManager>().getTurn();
 
         //Debug.Log(FirstSetFlag);

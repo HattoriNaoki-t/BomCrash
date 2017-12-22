@@ -52,14 +52,14 @@ public class DamegeEffect : MonoBehaviour
             Destroy(gameObject);
             Destroy(obj, 2.0f);
         }
-        else if (collision.transform.tag == "Player1")
+        if (collision.transform.tag == "Player1")
         {
             if (player1_hp == 2)
             {
                 Destroy(GameObject.Find("life1-1(Clone)"));
                 gamemanager.GetComponent<GameManager>().MinusHp();
             }
-            else
+            if(player1_hp == 1)
             {
                 Destroy(GameObject.Find("life1(Clone)"));
                 SceneManager.LoadScene("Title");
@@ -68,7 +68,7 @@ public class DamegeEffect : MonoBehaviour
             Destroy(gameObject);
             Destroy(obj, 2.0f);
         }
-        else if (collision.transform.tag == "Player2")
+        if (collision.transform.tag == "Player2")
         {
             if (player2_hp == 2)
             {
@@ -76,7 +76,7 @@ public class DamegeEffect : MonoBehaviour
 
                 gamemanager.GetComponent<GameManager>().MinusHp();
             }
-            else
+            if(player2_hp == 1)
             {
                 Destroy(GameObject.Find("life2(Clone)"));
                 SceneManager.LoadScene("Title");

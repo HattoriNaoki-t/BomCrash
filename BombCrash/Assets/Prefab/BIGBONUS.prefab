@@ -6703,6 +6703,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosion: {fileID: 1091969902461282, guid: c93cd36c448ac444e8681f51bb9c5b4e, type: 2}
   not: {fileID: 1598762316063382, guid: 5f59793710057a7498ada33ef6f9171d, type: 2}
+  not2: {fileID: 0}
   gamemanager: {fileID: 1504863035831614, guid: ec2dbdbffae50c545ba309566e9ff4f2,
     type: 2}
 --- !u!114 &114148470092341524
@@ -6718,6 +6719,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosion: {fileID: 1091969902461282, guid: c93cd36c448ac444e8681f51bb9c5b4e, type: 2}
   not: {fileID: 1598762316063382, guid: 5f59793710057a7498ada33ef6f9171d, type: 2}
+  not2: {fileID: 0}
   gamemanager: {fileID: 1504863035831614, guid: ec2dbdbffae50c545ba309566e9ff4f2,
     type: 2}
 --- !u!114 &114218213391092086
@@ -6733,7 +6735,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Player: {fileID: 1960116515939998, guid: bf702ca1ffd30de40b9abbb5b9d7761f, type: 2}
   Player2: {fileID: 1227733560372420, guid: 392417dd2494b404ba9a0431ea2a89fe, type: 2}
-  DecideButton: 335
+  DecideButton: 355
+  DecideButton2: 375
+  GameCom: {fileID: 1504863035831614, guid: ec2dbdbffae50c545ba309566e9ff4f2, type: 2}
   bomflag: 0
 --- !u!114 &114305933696821036
 MonoBehaviour:
@@ -6748,6 +6752,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosion: {fileID: 1091969902461282, guid: c93cd36c448ac444e8681f51bb9c5b4e, type: 2}
   not: {fileID: 1598762316063382, guid: 5f59793710057a7498ada33ef6f9171d, type: 2}
+  not2: {fileID: 0}
   gamemanager: {fileID: 1504863035831614, guid: ec2dbdbffae50c545ba309566e9ff4f2,
     type: 2}
 --- !u!114 &114312160457712276
@@ -6763,7 +6768,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Player: {fileID: 1960116515939998, guid: bf702ca1ffd30de40b9abbb5b9d7761f, type: 2}
   Player2: {fileID: 1227733560372420, guid: 392417dd2494b404ba9a0431ea2a89fe, type: 2}
-  DecideButton: 335
+  DecideButton: 355
+  DecideButton2: 375
+  GameCom: {fileID: 1504863035831614, guid: ec2dbdbffae50c545ba309566e9ff4f2, type: 2}
   bomflag: 0
 --- !u!114 &114343759738332632
 MonoBehaviour:
@@ -6778,7 +6785,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Player: {fileID: 1960116515939998, guid: bf702ca1ffd30de40b9abbb5b9d7761f, type: 2}
   Player2: {fileID: 1227733560372420, guid: 392417dd2494b404ba9a0431ea2a89fe, type: 2}
-  DecideButton: 335
+  DecideButton: 355
+  DecideButton2: 375
+  GameCom: {fileID: 1504863035831614, guid: ec2dbdbffae50c545ba309566e9ff4f2, type: 2}
   bomflag: 0
 --- !u!114 &114358705311778586
 MonoBehaviour:
@@ -6793,6 +6802,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosion: {fileID: 1091969902461282, guid: c93cd36c448ac444e8681f51bb9c5b4e, type: 2}
   not: {fileID: 1598762316063382, guid: 5f59793710057a7498ada33ef6f9171d, type: 2}
+  not2: {fileID: 0}
   gamemanager: {fileID: 1504863035831614, guid: ec2dbdbffae50c545ba309566e9ff4f2,
     type: 2}
 --- !u!114 &114380205550520122
@@ -6808,7 +6818,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Player: {fileID: 1960116515939998, guid: bf702ca1ffd30de40b9abbb5b9d7761f, type: 2}
   Player2: {fileID: 1227733560372420, guid: 392417dd2494b404ba9a0431ea2a89fe, type: 2}
-  DecideButton: 335
+  DecideButton: 355
+  DecideButton2: 375
+  GameCom: {fileID: 1504863035831614, guid: ec2dbdbffae50c545ba309566e9ff4f2, type: 2}
   bomflag: 0
 --- !u!114 &114447864814737804
 MonoBehaviour:
@@ -6823,6 +6835,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosion: {fileID: 1091969902461282, guid: c93cd36c448ac444e8681f51bb9c5b4e, type: 2}
   not: {fileID: 1598762316063382, guid: 5f59793710057a7498ada33ef6f9171d, type: 2}
+  not2: {fileID: 0}
   gamemanager: {fileID: 1504863035831614, guid: ec2dbdbffae50c545ba309566e9ff4f2,
     type: 2}
 --- !u!114 &114451993197702976
@@ -6838,6 +6851,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosion: {fileID: 1091969902461282, guid: c93cd36c448ac444e8681f51bb9c5b4e, type: 2}
   not: {fileID: 1598762316063382, guid: 5f59793710057a7498ada33ef6f9171d, type: 2}
+  not2: {fileID: 0}
   gamemanager: {fileID: 1504863035831614, guid: ec2dbdbffae50c545ba309566e9ff4f2,
     type: 2}
 --- !u!114 &114461481002010818
@@ -6853,7 +6867,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Player: {fileID: 1960116515939998, guid: bf702ca1ffd30de40b9abbb5b9d7761f, type: 2}
   Player2: {fileID: 1227733560372420, guid: 392417dd2494b404ba9a0431ea2a89fe, type: 2}
-  DecideButton: 335
+  DecideButton: 355
+  DecideButton2: 375
+  GameCom: {fileID: 1504863035831614, guid: ec2dbdbffae50c545ba309566e9ff4f2, type: 2}
   bomflag: 0
 --- !u!114 &114494930893879080
 MonoBehaviour:
@@ -6868,6 +6884,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosion: {fileID: 1091969902461282, guid: c93cd36c448ac444e8681f51bb9c5b4e, type: 2}
   not: {fileID: 1598762316063382, guid: 5f59793710057a7498ada33ef6f9171d, type: 2}
+  not2: {fileID: 0}
   gamemanager: {fileID: 1504863035831614, guid: ec2dbdbffae50c545ba309566e9ff4f2,
     type: 2}
 --- !u!114 &114526158834711070
@@ -6883,7 +6900,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Player: {fileID: 1960116515939998, guid: bf702ca1ffd30de40b9abbb5b9d7761f, type: 2}
   Player2: {fileID: 1227733560372420, guid: 392417dd2494b404ba9a0431ea2a89fe, type: 2}
-  DecideButton: 335
+  DecideButton: 355
+  DecideButton2: 375
+  GameCom: {fileID: 1504863035831614, guid: ec2dbdbffae50c545ba309566e9ff4f2, type: 2}
   bomflag: 0
 --- !u!114 &114586807291756368
 MonoBehaviour:
@@ -6898,7 +6917,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Player: {fileID: 1960116515939998, guid: bf702ca1ffd30de40b9abbb5b9d7761f, type: 2}
   Player2: {fileID: 1227733560372420, guid: 392417dd2494b404ba9a0431ea2a89fe, type: 2}
-  DecideButton: 335
+  DecideButton: 355
+  DecideButton2: 375
+  GameCom: {fileID: 1504863035831614, guid: ec2dbdbffae50c545ba309566e9ff4f2, type: 2}
   bomflag: 0
 --- !u!114 &114642372871082406
 MonoBehaviour:
@@ -6913,7 +6934,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Player: {fileID: 1960116515939998, guid: bf702ca1ffd30de40b9abbb5b9d7761f, type: 2}
   Player2: {fileID: 1227733560372420, guid: 392417dd2494b404ba9a0431ea2a89fe, type: 2}
-  DecideButton: 335
+  DecideButton: 355
+  DecideButton2: 375
+  GameCom: {fileID: 1504863035831614, guid: ec2dbdbffae50c545ba309566e9ff4f2, type: 2}
   bomflag: 0
 --- !u!114 &114691718060818816
 MonoBehaviour:
@@ -6928,6 +6951,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosion: {fileID: 1091969902461282, guid: c93cd36c448ac444e8681f51bb9c5b4e, type: 2}
   not: {fileID: 1598762316063382, guid: 5f59793710057a7498ada33ef6f9171d, type: 2}
+  not2: {fileID: 0}
   gamemanager: {fileID: 1504863035831614, guid: ec2dbdbffae50c545ba309566e9ff4f2,
     type: 2}
 --- !u!114 &114903153451560048
@@ -6943,7 +6967,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Player: {fileID: 1960116515939998, guid: bf702ca1ffd30de40b9abbb5b9d7761f, type: 2}
   Player2: {fileID: 1227733560372420, guid: 392417dd2494b404ba9a0431ea2a89fe, type: 2}
-  DecideButton: 335
+  DecideButton: 355
+  DecideButton2: 375
+  GameCom: {fileID: 1504863035831614, guid: ec2dbdbffae50c545ba309566e9ff4f2, type: 2}
   bomflag: 0
 --- !u!114 &114909200147004756
 MonoBehaviour:
@@ -6958,6 +6984,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosion: {fileID: 1091969902461282, guid: c93cd36c448ac444e8681f51bb9c5b4e, type: 2}
   not: {fileID: 1598762316063382, guid: 5f59793710057a7498ada33ef6f9171d, type: 2}
+  not2: {fileID: 0}
   gamemanager: {fileID: 1504863035831614, guid: ec2dbdbffae50c545ba309566e9ff4f2,
     type: 2}
 --- !u!135 &135080921974036742
