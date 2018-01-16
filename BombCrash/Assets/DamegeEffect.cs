@@ -73,7 +73,6 @@ public class DamegeEffect : MonoBehaviour
             if (player2_hp == 2)
             {
                 Destroy(GameObject.Find("life2-1(Clone)"));
-
                 gamemanager.GetComponent<GameManager>().MinusHp();
             }
             if(player2_hp == 1)

@@ -8,22 +8,10 @@ using UnityEngine.UI;
 
 
 
-enum State
-{
-
-    Init,
-
-    Start,
-
-    Playing,
-
-    Stay,
-
-}
 
 
 
-public class GameController : MonoBehaviour
+public class GameController2 : MonoBehaviour
 {
 
     public Button[] stopbt;
@@ -51,11 +39,7 @@ public class GameController : MonoBehaviour
     bool player1_right = false;
     bool player2_right = false;
     private GameObject MainCam;
-    private GameObject MainCam2;
-
     private GameObject SubCam;
-    private GameObject SubCam2;
-
 
     //エフェクトのオブジェクト
     GameObject[] Box = new GameObject[4];
@@ -99,11 +83,7 @@ public class GameController : MonoBehaviour
         }
         //カメラ
         MainCam = GameObject.Find("Main Camera");
-        MainCam2 = GameObject.Find("Main Camera2");
-
-        SubCam = GameObject.Find("SubCamera");
-        SubCam2 = GameObject.Find("SubCamera2");
-
+        SubCam = GameObject.Find("SubCamera2");
         //追加文/////////////////////////////////
         ///////////////////////////エフェクト///////////////////////////////////
         ////////////当たった時(スロットの上にランダムで表示させる物)////////////
@@ -581,10 +561,7 @@ public class GameController : MonoBehaviour
         if (MainCam.activeSelf)
         {
             MainCam.SetActive(false);
-            MainCam2.SetActive(false);
             SubCam.SetActive(true);
-            SubCam2.SetActive(true);
-
             state = State.Init;
         }
 
@@ -592,11 +569,7 @@ public class GameController : MonoBehaviour
         else
         {
             MainCam.SetActive(true);
-            MainCam2.SetActive(true);
-
             SubCam.SetActive(false);
-            SubCam2.SetActive(false);
-
             state = State.Init;
         }
     }

@@ -12,6 +12,7 @@ ff05dcdf90651c3d98a9cad3df5e471e UnityEngine.Timeline.dll:UnityEngine.Timeline.C
 6af7378a45ad6da4992a71ef50ddc2eb UnityEngine.Timeline.dll:UnityEngine.Timeline.PlayableTrack
 af723155c251fcfa0e66530a75f3ea4c UnityEngine.Timeline.dll:UnityEngine.Timeline.TimelineAsset
 02728666392a320b5685d7d6eed673b3 Assembly-CSharp.dll:.CharMove
+bb2437a885d6508484cfaaf7d8611c85 Assembly-CSharp.dll:.GameController2
 a35dc9cca2faebc5f5f1aeb9e8e47bbe UnityEngine.UI.dll:UnityEngine.UI.AspectRatioFitter
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.UI.dll:UnityEngine.EventSystems.BaseInput
 49cd62a578efc0a599b810a2b66cd49c UnityEngine.UI.dll:UnityEngine.UI.Button
@@ -114,8 +115,9 @@ bc68edb0af574bf79f9550ead8ebae5c UnityEngine.HoloLens.dll:UnityEngine.Audio.Audi
 463516d5b5fe8e67a0a24c48f2095b04 UnityEngine.HoloLens.dll:UnityEngine.EventSystems.HoloLensInputModule
 c2275a8bfbb9f9942cad75ecdfded41d UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.SpatialMappingCollider
 45f3431f0103c41611e8d4eec3d439df UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.SpatialMappingRenderer
+86c1a4aea1eeb4b82de9846d01a431b3 Assembly-CSharp.dll:.Bomb
 bb2437a885d6508484cfaaf7d8611c85 Assembly-CSharp.dll:.GameController
-5ec6fbc9feaf708c22581c2a6d332af4 Assembly-CSharp.dll:.GameManager
+3b3ee5f219603ad496ea55ee104603a7 Assembly-CSharp.dll:.GameManager
 fc1e0f4d8439d9928083474691511a13 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkAnimator
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.Networking.dll:UnityEngine.Networking.NetworkBehaviour
 60b2bb652410a5867a5ab9a01cd38461 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkDiscovery
@@ -142,11 +144,10 @@ bc68edb0af574bf79f9550ead8ebae5c UnityEngine.HoloLens.dll:UnityEngine.Audio.Audi
 463516d5b5fe8e67a0a24c48f2095b04 UnityEngine.HoloLens.dll:UnityEngine.EventSystems.HoloLensInputModule
 c2275a8bfbb9f9942cad75ecdfded41d UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.SpatialMappingCollider
 45f3431f0103c41611e8d4eec3d439df UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.SpatialMappingRenderer
+30d614fb546e9e43e21539107fd25e17 Assembly-CSharp.dll:.BombEffect
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.TitleScene2
 9de3a22eca9aefadba2d10d5987cefe3 UnityEngine.SpatialTracking.dll:UnityEngine.SpatialTracking.TrackedPoseDriver
 feca7a483a8d41c4ef6054239dff389b Assembly-CSharp.dll:.PlayerWarp
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.Sample
 2d92b38861eeb5b97be8b2f266b85f5a Assembly-CSharp.dll:.DamegeEffect
 3f08616920769ecc32ac7d2dae5b22c6 Assembly-CSharp.dll:.TitleScene
-86c1a4aea1eeb4b82de9846d01a431b3 Assembly-CSharp.dll:.Bomb
-30d614fb546e9e43e21539107fd25e17 Assembly-CSharp.dll:.BombEffect
